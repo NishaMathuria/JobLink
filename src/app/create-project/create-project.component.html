@@ -27,6 +27,7 @@
 
         <div class="row">
           <div class="col">
+            <label for="formGroup" class="form-label">Start Date </label>
             <input style="border-radius: 50px;"
               class="form-control"
               placeholder="Start date"
@@ -38,6 +39,7 @@
             />
           </div>
           <div class="col">
+            <label for="formGroup" class="form-label">End Date</label>
             <input style="border-radius: 50px;"
               class="form-control"
               placeholder="End date"
@@ -64,13 +66,37 @@
 
         <div class="row">
           <div class="col">
-            <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName = "selectSupervisor" [ngClass]="{'is-invalid':createForm.get('selectSupervisor')?.invalid && (createForm.get('selectSupervisor')?.dirty || createForm.get('selectSupervisor')?.touched)}">
-              <option selected>Select Supervisor</option>
+            <label for="formGroup" class="form-label">Select Supervisor</label>
+            <select 
+            style="border-radius: 50px;" 
+            id="inputState" 
+            class="form-select" 
+            formControlName = "selectSupervisor" 
+            [ngClass]="{'is-invalid':createForm.get('selectSupervisor')?.invalid && (createForm.get('selectSupervisor')?.dirty || createForm.get('selectSupervisor')?.touched)}"
+            placeholder="Select Supervisor">
+            <option>Robert</option>
+            <option>John</option>
+            <option>Helly</option>
+            <option>Chris</option>
             </select>
           </div>
           <div class="col">
-            <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName = "expectedMember" [ngClass]="{'is-invalid':createForm.get('expectedMember')?.invalid && (createForm.get('expectedMember')?.dirty || createForm.get('expectedMember')?.touched)}">
-              <option selected>Expected Members</option>
+            <label for="formGroup" class="form-label">Expected Members</label>
+            <select 
+            style="border-radius: 50px;" 
+            id="inputState" 
+            class="form-select" 
+            formControlName = "expectedMember" 
+            [ngClass]="{'is-invalid':createForm.get('expectedMember')?.invalid && (createForm.get('expectedMember')?.dirty || createForm.get('expectedMember')?.touched)}"
+            placeholder="Expected Members">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
             </select>
           </div>
         </div>
@@ -78,8 +104,18 @@
         <br />
         <div class="row">
           <div class="col">
-            <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName = "addUser" [ngClass]="{'is-invalid':createForm.get('addUser')?.invalid && (createForm.get('addUser')?.dirty || createForm.get('addUser')?.touched)}">
-              <option selected>Add User</option>
+            <label for="formGroup" class="form-label">Add User</label>
+            <select 
+            style="border-radius: 50px;" 
+            id="inputState" 
+            class="form-select" 
+            formControlName = "addUser" 
+            [ngClass]="{'is-invalid':createForm.get('addUser')?.invalid && (createForm.get('addUser')?.dirty || createForm.get('addUser')?.touched)}"
+            placeholder="Add User">
+            <option>Robert</option>
+            <option>John</option>
+            <option>Helly</option>
+            <option>Chris</option>
             </select>
           </div>
         </div>

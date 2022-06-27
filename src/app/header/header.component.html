@@ -44,7 +44,13 @@
             >
               Hi Sara Jonas
             </a>
-            <ul
+            <ul ngbDropdownMenu
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown">
+              <li><a href="#"></a>Profile</li>
+              <li><a class="dropdown-item" href="#"></a>Logout</li>
+            </ul>
+            <!-- <ul
               ngbDropdownMenu
               class="dropdown-menu"
               aria-labelledby="navbarDropdown"
@@ -55,10 +61,8 @@
               </li>
               <li><hr class="dropdown-divider" /></li>
               <li class="dropdown-item" role="button">
-                <i class="fa fa-sign-out me-2" aria-hidden="true"></i>
-                logout
-              </li>
-            </ul>
+                <option>logout</option>
+            </ul> -->
           </div>
         </li>
       </ul>
