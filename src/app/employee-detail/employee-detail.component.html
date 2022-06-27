@@ -1,0 +1,150 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand bg-light">
+  <div class="container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">On-Going</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Past</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Upcoming</a>
+        </li>
+      </ul>
+      <a class="btn btn-outline-success" href="create-project" role="button">Create New Project</a>
+    </div>
+  </div>
+</nav>
+
+<!-- employee detail card 1 -->
+<div class="container p-3">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Mining Engineer</h5>
+      <span>Supervisor: </span><span class="text-muted">John Doe</span>
+      <p>House 181,building 12, Ahmedabad</p>
+
+      <div class="row align-items-center">
+        <div class="col">
+          <span>Project Period:</span
+          ><span class="text-muted">Start Date - End Date</span>
+        </div>
+        <div class="col">
+          <span>Number of People Added:</span
+          ><span class="text-muted">300</span>
+        </div>
+        <div class="col">
+
+          <a style="color: rgb(13, 255, 0)" class="btn btn-light" href="profile" role="button">View Profile</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container ">
+    <span style="color:rgb(123, 192, 54)">Time Sheet</span><span>(John Doe)</span>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <p class="navbar-brand">Week 1</p>
+          <div>
+            <button class="mx-2"><i class="bi bi-download"></i></button>
+            <button class="mx-2" (click)="showSheet()" *ngIf="show"><i class="bi bi-caret-up-fill"></i></button>
+            <button class="mx-2" (click)="showSheet()" *ngIf="!show"><i class="bi bi-caret-down-fill"></i></button>
+          </div>
+        </div>
+      </nav>
+</div>
+
+<div class="container p-3" *ngIf="show">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Day</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Attendance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Monday</td>
+                    <td>19th March 2020</td>
+                    <td>Absent</td>
+                  </tr>
+                  <tr>
+                    <td>Tuesday</td>
+                    <td>19th March 2020</td>
+                    <td>present</td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday </td>
+                    <td>19th March 2020</td>
+                    <td>present </td>
+                  </tr>
+                  <tr>
+                    <td>Thursday</td>
+                    <td>19th March 2020</td>
+                    <td>Absent</td>
+                  </tr>
+                  <tr>
+                    <td>Friday</td>
+                    <td>19th March 2020</td>
+                    <td>Absent</td>
+                  </tr>
+                  <tr>
+                    <td>Saturday</td>
+                    <td>19th March 2020</td>
+                    <td>present</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td>19th March 2020</td>
+                    <td>Absent</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+</div>
+
+<div class="container ">
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <p class="navbar-brand">Week 2</p>
+          <div>
+            <button class="mx-2"><i class="bi bi-download"></i></button>
+            <button class="mx-2" (click)="showSheet()" *ngIf="show"><i class="bi bi-caret-up-fill"></i></button>
+            <button class="mx-2" (click)="showSheet()" *ngIf="!show"><i class="bi bi-caret-down-fill"></i></button>
+          </div>
+        </div>
+      </nav>
+</div>
+
+<div class="container p-3">
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <p class="navbar-brand">Week 3</p>
+          <div>
+            <button class="mx-2"><i class="bi bi-download"></i></button>
+            <button class="mx-2" (click)="showSheet()" *ngIf="show"><i class="bi bi-caret-up-fill"></i></button>
+            <button class="mx-2" (click)="showSheet()" *ngIf="!show"><i class="bi bi-caret-down-fill"></i></button>
+          </div>
+        </div>
+      </nav>
+</div>

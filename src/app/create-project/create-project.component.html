@@ -1,0 +1,94 @@
+<div class="container p-3">
+  <div class="card">
+    <span class="ms-2 mt-2">Create Project :</span>
+    <hr />
+    <div class="card-body">
+      <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3 ">
+          <input style="border-radius: 50px;"
+            class="form-control"
+            [ngClass]="{'is-invalid':createForm.get('projectTitle')?.invalid && (createForm.get('projectTitle')?.dirty || createForm.get('projectTitle')?.touched)}"
+            placeholder="Project Title"
+            type="text"
+            name="Title"
+            formControlName = "projectTitle"
+          />
+        </div>
+        <div class="mb-3">
+          <textarea style="border-radius: 50px;"
+            class="form-control"
+            [ngClass]="{'is-invalid':createForm.get('projectDescription')?.invalid && (createForm.get('projectDescription')?.dirty || createForm.get('projectDescription')?.touched)}"
+            placeholder="Project Description"
+            type="text"
+            name="Project Description"
+            formControlName = "projectDescription"
+          ></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <input style="border-radius: 50px;"
+              class="form-control"
+              placeholder="Start date"
+              type="date"
+              id="start date"
+              name="start date"
+              formControlName = "startDate"
+              [ngClass]="{'is-invalid':createForm.get('startDate')?.invalid && (createForm.get('startDate')?.dirty || createForm.get('startDate')?.touched)}"
+            />
+          </div>
+          <div class="col">
+            <input style="border-radius: 50px;"
+              class="form-control"
+              placeholder="End date"
+              type="date"
+              id="end date"
+              name="end date"
+              formControlName = "endDate"
+              [ngClass]="{'is-invalid':createForm.get('endDate')?.invalid && (createForm.get('endDate')?.dirty || createForm.get('endDate')?.touched)}"
+            />
+          </div>
+        </div>
+
+        <br />
+        <div class="mb-3">
+          <textarea style="border-radius: 50px;"
+            class="form-control"
+            [ngClass]="{'is-invalid':createForm.get('projectLocation')?.invalid && (createForm.get('projectLocation')?.dirty || createForm.get('projectLocation')?.touched)}"
+            placeholder="Project Location"
+            type="text"
+            name="Project Location"
+            formControlName = "projectLocation"
+          ></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName = "selectSupervisor" [ngClass]="{'is-invalid':createForm.get('selectSupervisor')?.invalid && (createForm.get('selectSupervisor')?.dirty || createForm.get('selectSupervisor')?.touched)}">
+              <option selected>Select Supervisor</option>
+            </select>
+          </div>
+          <div class="col">
+            <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName = "expectedMember" [ngClass]="{'is-invalid':createForm.get('expectedMember')?.invalid && (createForm.get('expectedMember')?.dirty || createForm.get('expectedMember')?.touched)}">
+              <option selected>Expected Members</option>
+            </select>
+          </div>
+        </div>
+
+        <br />
+        <div class="row">
+          <div class="col">
+            <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName = "addUser" [ngClass]="{'is-invalid':createForm.get('addUser')?.invalid && (createForm.get('addUser')?.dirty || createForm.get('addUser')?.touched)}">
+              <option selected>Add User</option>
+            </select>
+          </div>
+        </div>
+
+        <br />
+        <div class="d-grid gap-2 col-4 mx-auto">
+          <button style="border-radius: 50px;" class="btn btn-success" type="submit" [disabled]="!createForm.valid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
