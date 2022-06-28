@@ -11,7 +11,8 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { AddTeamMemberPageComponent } from './add-team-member-page/add-team-member-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatDialogModule} from '@angular/material/dialog';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

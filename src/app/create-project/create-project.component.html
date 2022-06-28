@@ -66,37 +66,37 @@
 
         <div class="row">
           <div class="col">
-            <label for="formGroup" class="form-label">Select Supervisor</label>
             <select 
             style="border-radius: 50px;" 
             id="inputState" 
             class="form-select" 
             formControlName = "selectSupervisor" 
             [ngClass]="{'is-invalid':createForm.get('selectSupervisor')?.invalid && (createForm.get('selectSupervisor')?.dirty || createForm.get('selectSupervisor')?.touched)}"
-            placeholder="Select Supervisor">
-            <option>Robert</option>
-            <option>John</option>
-            <option>Helly</option>
-            <option>Chris</option>
+            >
+            <option selected value="">select Supervisor</option>
+            <option value="Robert">Robert</option>
+            <option value="John">John</option>
+            <option value="Helly">Helly</option>
+            <option value="Chris">Chris</option>
             </select>
           </div>
           <div class="col">
-            <label for="formGroup" class="form-label">Expected Members</label>
             <select 
             style="border-radius: 50px;" 
             id="inputState" 
             class="form-select" 
             formControlName = "expectedMember" 
             [ngClass]="{'is-invalid':createForm.get('expectedMember')?.invalid && (createForm.get('expectedMember')?.dirty || createForm.get('expectedMember')?.touched)}"
-            placeholder="Expected Members">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
+            >
+            <option value="">Expected Members</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
             </select>
           </div>
         </div>
@@ -104,18 +104,18 @@
         <br />
         <div class="row">
           <div class="col">
-            <label for="formGroup" class="form-label">Add User</label>
             <select 
             style="border-radius: 50px;" 
             id="inputState" 
             class="form-select" 
             formControlName = "addUser" 
             [ngClass]="{'is-invalid':createForm.get('addUser')?.invalid && (createForm.get('addUser')?.dirty || createForm.get('addUser')?.touched)}"
-            placeholder="Add User">
-            <option>Robert</option>
-            <option>John</option>
-            <option>Helly</option>
-            <option>Chris</option>
+            placeholder="">
+            <option value="">Add User</option>
+            <option value="Robert">Robert</option>
+            <option value="John">John</option>
+            <option value="Helly">Helly</option>
+            <option value="Chris">Chris</option>
             </select>
           </div>
         </div>
