@@ -76,32 +76,21 @@
           </button>
         </div>
        
-       
+        <!-- to delete the project -->
         <div class="col">
-          <button
-            style="color: rgb(13, 255, 0)"
-            type="button"
-            class="btn btn-light"
-            data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-          >
-            Close Project
-          </button>
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                 <p> Are you sure you want to close this project? </p>
-                 <p> you might be changed with a penalty fee </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirm & Proceed</button>
-                </div>
-              </div>
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
             </div>
-          </div>
+            <div class="modal-body m-5">
+              <p> Are you sure you want to close this project?</p>
+                 <p> you might be changed with a penalty fee </p>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button style="border-radius: 50px;" type="button" class="btn btn-success" (click)="modal.close('Save click')">Confirm & Proceed</button>
+            </div>
+          </ng-template>
+          <button style="color: rgb(13, 255, 0)" class="btn btn-light" (click)="open(content)">Close Project</button>
 
 
         </div>
