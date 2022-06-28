@@ -8,6 +8,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddTeamMemberPageComponent implements OnInit {
 
+  uploadField  = document.getElementById("file");
+
+  value: any;
+  files: any;
+  
+  
   createForm!:FormGroup
   constructor(private fb:FormBuilder) {
     this.createForm = this.fb.group({
@@ -27,6 +33,12 @@ export class AddTeamMemberPageComponent implements OnInit {
     })
    }
   
+  //  docFile: any.onchange = () => {
+  //   if(this.files[0].size > 2097152){
+  //      alert("File is too big!");
+  //      this.value = "";
+  //   };
+  // };
 
   ngOnInit(): void {
   }
@@ -34,5 +46,4 @@ export class AddTeamMemberPageComponent implements OnInit {
   onSave(){
     console.log(this.createForm.value)
   }
-
 }
