@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'profile', component: EmployeeProfileComponent },
   { path: 'add-member', component: AddTeamMemberPageComponent },
   { path: 'employee-detail', component: EmployeeDetailComponent },
-  { path: 'project-detail', component: ProjectDetailComponent }
+  { path: 'project-detail', component: ProjectDetailComponent },
+  { path: '**', redirectTo:'', pathMatch:'full'}
 ];
 
 @NgModule({
