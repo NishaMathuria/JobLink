@@ -16,4 +16,8 @@ export class EmployeeProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onRightClick(event: { preventDefault: () => void; }){
+    event.preventDefault();
+  }
+
 }
