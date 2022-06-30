@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { response } from 'express';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-create-project',
@@ -9,7 +11,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CreateProjectComponent implements OnInit {
 
   createForm!:FormGroup
-  constructor(private fb:FormBuilder) {
+  myservice: any;
+  profile: any;
+  constructor(private fb:FormBuilder,myservice:ProfileService) {
+
     this.createForm = this.fb.group({
       projectTitle:['',Validators.required],
       projectDescription:['',Validators.required],
@@ -24,6 +29,9 @@ export class CreateProjectComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.myservice.getProfile().subscribe((response: any) => {
+      this.profile = response;
+    })
   }
 
   onSubmit(){
