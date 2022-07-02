@@ -13,6 +13,8 @@ export class CreateProjectComponent implements OnInit {
   createForm!:FormGroup
   myservice: any;
   profile: any;
+  form: null | undefined;
+
   constructor(private fb:FormBuilder,myservice:ProfileService) {
 
     this.createForm = this.fb.group({
@@ -38,5 +40,11 @@ export class CreateProjectComponent implements OnInit {
     console.log(this.createForm.value);
     this.createForm.reset()
   }
+
+  // const form = document.getElementById('create-project')
+  // form.addEventListener('submit',projectUser)
+  // function projectUser(event) {
+  //   event.preventDefault()
+  // }
 
 }
