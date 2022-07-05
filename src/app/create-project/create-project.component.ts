@@ -31,9 +31,9 @@ export class CreateProjectComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.myservice.getProfile().subscribe((response: any) => {
-      this.profile = response;
-    })
+    // this.myservice.getProfile().subscribe((response: any) => {
+    //   this.profile = response;
+    // })
   }
 
   onSubmit(){
