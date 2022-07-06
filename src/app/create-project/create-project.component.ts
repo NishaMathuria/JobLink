@@ -31,20 +31,11 @@ export class CreateProjectComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.myservice.getProfile().subscribe((response: any) => {
-    //   this.profile = response;
-    // })
   }
 
   onSubmit(){
     console.log(this.createForm.value);
     this.createForm.reset()
   }
-
-  // const form = document.getElementById('create-project')
-  // form.addEventListener('submit',projectUser)
-  // function projectUser(event) {
-  //   event.preventDefault()
-  // }
 
 }

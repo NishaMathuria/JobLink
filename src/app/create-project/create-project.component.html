@@ -89,14 +89,14 @@
             [ngClass]="{'is-invalid':createForm.get('expectedMember')?.invalid && (createForm.get('expectedMember')?.dirty || createForm.get('expectedMember')?.touched)}"
             >
             <option value="">Expected Members</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
+              <option value="1">10</option>
+              <option value="2">20</option>
+              <option value="3">30</option>
+              <option value="4">40</option>
+              <option value="5">50</option>
+              <option value="6">60</option>
+              <option value="7">70</option>
+              <option value="8">80</option>
             </select>
           </div>
         </div>
@@ -122,8 +122,6 @@
 
         <br />
         <div class="d-grid gap-2 col-4 mx-auto">
-
-          <!-- <a style="border-radius: 50px;" href="project-detail" class="btn btn-success" role="button" data-bs-toggle="button" type="submit">Submit</a> -->
           <button style="border-radius: 50px;" class="btn btn-success" type="submit" [disabled]="!createForm.valid">Submit</button>
         </div>
       </form>

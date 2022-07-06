@@ -33,18 +33,14 @@ export class AddTeamMemberPageComponent implements OnInit {
     })
    }
   
-  //  docFile: any.onchange = () => {
-  //   if(this.files[0].size > 2097152){
-  //      alert("File is too big!");
-  //      this.value = "";
-  //   };
-  // };
+  
 
   ngOnInit(): void {
   }
 
   onSave(){
-    console.log(this.createForm.value)
+    console.log(this.createForm.value);
+    this.createForm.reset();
   }
 }
 
