@@ -15,6 +15,7 @@ export class AddTeamMemberPageComponent implements OnInit {
   
   
   createForm!:FormGroup
+  warning: boolean | undefined;
   constructor(private fb:FormBuilder) {
     this.createForm = this.fb.group({
       firstName:['',Validators.required],
@@ -41,7 +42,19 @@ export class AddTeamMemberPageComponent implements OnInit {
   onSave(){
     console.log(this.createForm.value);
     this.createForm.reset();
+  
   }
+
+
+
+  // onSelectFile (event:any) {
+  //   const allowed_type = ['application/pdf']
+  //   if(this.files.size > 5 *1024 && this.files.type !== allowed_type) {
+  //     this.warning = true;
+  //   } else {
+  //     this.warning = false;
+  //   }
+  // }
 }
 
 

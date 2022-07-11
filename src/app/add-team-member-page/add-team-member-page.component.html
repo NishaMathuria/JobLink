@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header">Add Team Member</div>
     <div class="card-body">
-      <form [formGroup]="createForm" (ngSubmit)="onSave()" action="" method="post">
+      <form [formGroup]="createForm" (ngSubmit)="onSave()">
         <div class="row g-3">
 
           <!-- First Name -->
@@ -83,8 +83,8 @@
             <div class="card-body"> 
               <div class="row">
                 <div class="col">
-                  <label for="formGroup" class="form-label">Welder</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName="welder">
+                  <label for="formGroup" class="form-label my-2">Welder</label>
+                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="welder">
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
@@ -92,56 +92,56 @@
                   </select>
 
 
-                  <label for="formGroup" class="form-label">Fitter</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName="fitter">
+                  <label for="formGroup" class="form-label my-2">Fitter</label>
+                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="fitter">
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label">Rigger</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName="rigger">
+                  <label for="formGroup" class="form-label my-2">Rigger</label>
+                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="rigger">
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label">Sacffolder</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName="sacffolder">
+                  <label for="formGroup" class="form-label my-2">Sacffolder</label>
+                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="sacffolder">
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label">Instrument Tech </label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName="instrumentTech">
+                  <label for="formGroup" class="form-label my-2">Instrument Tech </label>
+                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="instrumentTech">
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label">Election</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName="election">
+                  <label for="formGroup" class="form-label my-2">Election</label>
+                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="election">
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label">Mechanic</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName="mechanic">
+                  <label for="formGroup" class="form-label my-2">Mechanic</label>
+                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="mechanic">
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label">Crane Operator</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select" formControlName="craneOperator">
+                  <label for="formGroup" class="form-label my-2">Crane Operator</label>
+                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="craneOperator">
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
@@ -153,17 +153,22 @@
             </div>
           </div>
 
+          <div class="d-flex justify-content-center">
 
+            <a style="border-radius: 50px;" class="btn btn-secondary" href="#" role="button">Back</a> &nbsp;
+            <button style="border-radius: 50px;" class="btn btn-success" type="submit" [disabled]="!createForm.valid">Save</button>
+          </div>
         </div>
+
       </form>
 
       <br />
-      <nav class="navbar bg-light">
+      <!-- <nav class="navbar bg-light">
         <form class="container-fluid justify-content-center">
           <a style="border-radius: 50px;" class="btn btn-secondary" href="#" role="button">Back</a> &nbsp;
-          <button style="border-radius: 50px;" class="btn btn-success" type="save" [disabled]="!createForm.valid">Save</button>
+          <button style="border-radius: 50px;" class="btn btn-success" type="submit" [disabled]="!createForm.valid">Save</button>
         </form>
-      </nav>
+      </nav> -->
     </div>
   </div>
 </div>
