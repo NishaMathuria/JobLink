@@ -9,8 +9,8 @@ export class ProjectDetailService {
   private url = '';
   constructor(private httpClient: HttpClient) { }
 
-  getProjectDetail(){
-    return this.httpClient.get('http://localhost:4000/api/project')
+  getProjectDetail(page: number){
+    return this.httpClient.get('http://localhost:4000/api/project' + '?page=' + page)
   }
 
   createProject(data:any){

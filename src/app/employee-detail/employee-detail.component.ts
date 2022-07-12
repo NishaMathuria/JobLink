@@ -12,22 +12,6 @@ import { ProjectDetailService } from '../services/project-detail.service';
 })
 export class EmployeeDetailComponent implements OnInit {
 
-  // infoReceived1: string[] = [];
-  // infoReceived2: string[] = [];
-  // infoReceived3: string[] = [];
-  
-  // getInfoFromService1(){
-  //   this.infoReceived1 = this.myservice.getInfo1()
-  // }
-
-  // getInfoFromService2(){
-  //   this.infoReceived2 = this.myservice.getInfo2()
-  // }
-
-  // getInfoFromService3(){
-  //   this.infoReceived3 = this.myservice.getInfo3()
-  // }
-
   show=true;
   show1=true;
   show2=true;

@@ -33,19 +33,19 @@
 <!-- employee detail card 1 -->
 <div class="container">
   <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Mining Engineer</h5>
-      <span>Supervisor: </span><span class="text-muted">John Doe</span>
-      <p>House 181,building 12, Ahmedabad</p>
+    <div class="card-body" *ngIf="ProjectDetail">
+      <h5 class="card-title">{{ProjectDetail.projectTitle}}</h5>
+      <span>Supervisor: </span><span class="text-muted">{{ProjectDetail.selectSupervisor}}</span>
+      <p>{{ProjectDetail.projectLocation}}</p>
 
       <div class="row align-items-center">
         <div class="col">
           <span>Project Period:</span
-          ><span class="text-muted">Start Date - End Date</span>
+          ><span class="text-muted">{{ProjectDetail.startDate | date:"dd/MM/yyyy"}} - {{ProjectDetail.endDate | date:"dd/MM/yyyy"}}</span>
         </div>
         <div class="col">
           <span>Number of People Added:</span
-          ><span class="text-muted">300</span>
+          ><span class="text-muted">{{ProjectDetail.expectedMember}}</span>
         </div>
         <div class="col">
           <span>Amount in Escrow Account </span

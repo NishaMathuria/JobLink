@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'profile/:id', component: EmployeeProfileComponent },
   { path: 'add-member', component: AddTeamMemberPageComponent },
   { path: 'employee-detail/:id', component: EmployeeDetailComponent },
-  { path: 'project-detail', component: ProjectDetailComponent },
+  { path: 'project-detail/:id', component: ProjectDetailComponent },
   { path: '**', redirectTo:'', pathMatch:'full'}
 ];
 

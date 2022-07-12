@@ -12,9 +12,8 @@ import { ProjectDetailService } from '../services/project-detail.service';
 export class ProjectDetailComponent implements OnInit {
   closeResult: string | undefined;
   ProjectDetail: any;
-  myservice: any;
 
-  constructor(private modalService: NgbModal, myservice:ProjectDetailService, private router: ActivatedRoute) { }
+  constructor(private modalService: NgbModal,private projectService:ProjectDetailService, private router: ActivatedRoute) { }
 
   
   open(content: any) {
@@ -29,10 +28,12 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.myservice.getProjectDetails().subscribe((response: any) => {
-      this.ProjectDetail = response;
-      console.log(response);
-    })
+    this.router.params.subscribe((params: any)=>{
+      this.projectService.getProjectById(params.id).subscribe((response: any) => {
+        this.ProjectDetail = response.project;
+        console.log(response);
+      })
+    });
   }
 
 }
