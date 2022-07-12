@@ -4,96 +4,133 @@
     <div class="card-body">
       <form [formGroup]="createForm" (ngSubmit)="onSave()">
         <div class="row g-3">
-
           <!-- First Name -->
           <div class="col">
-            <input style="border-radius: 50px;"
-            [ngClass]="{'is-invalid':createForm.get('firstName')?.invalid && (createForm.get('firstName')?.dirty || createForm.get('firstName')?.touched)}"
+            <input
+              style="border-radius: 50px"
+              [ngClass]="{
+                'is-invalid':
+                  createForm.get('firstName')?.invalid &&
+                  (createForm.get('firstName')?.dirty ||
+                    createForm.get('firstName')?.touched)
+              }"
               type="text"
               class="form-control"
               placeholder="First name"
               aria-label="First name"
-              formControlName = "firstName"
+              formControlName="firstName"
             />
           </div>
 
           <!-- Last Name -->
           <div class="col">
-            <input style="border-radius: 50px;"
-            [ngClass]="{'is-invalid':createForm.get('lastName')?.invalid && (createForm.get('lastName')?.dirty || createForm.get('lastName')?.touched)}"
+            <input
+              style="border-radius: 50px"
+              [ngClass]="{
+                'is-invalid':
+                  createForm.get('lastName')?.invalid &&
+                  (createForm.get('lastName')?.dirty ||
+                    createForm.get('lastName')?.touched)
+              }"
               type="text"
               class="form-control"
               placeholder="Last name"
               aria-label="Last name"
-              formControlName = "lastName"
+              formControlName="lastName"
             />
           </div>
         </div>
         <br />
         <div class="row g-3">
-
           <!-- Phone Number -->
           <div class="col">
-            <input style="border-radius: 50px;"
-            [ngClass]="{'is-invalid':createForm.get('phoneNumber')?.invalid && (createForm.get('phoneNumber')?.dirty || createForm.get('phoneNumber')?.touched)}"
-            pattern="^((\\+91-?)|0)?[0-9]{10}$"
-            type="number"
-            class="form-control"
-            placeholder="Phone Number"
-            aria-label="Phone Number"
-            formControlName = "phoneNumber"
+            <input
+              style="border-radius: 50px"
+              [ngClass]="{
+                'is-invalid':
+                  createForm.get('phoneNumber')?.invalid &&
+                  (createForm.get('phoneNumber')?.dirty ||
+                    createForm.get('phoneNumber')?.touched)
+              }"
+              pattern="^((\\+91-?)|0)?[0-9]{10}$"
+              type="number"
+              class="form-control"
+              placeholder="Phone Number"
+              aria-label="Phone Number"
+              formControlName="phoneNumber"
             />
           </div>
 
           <!-- Email Address -->
           <div class="col">
-            <input style="border-radius: 50px;"
-            [ngClass]="{'is-invalid':createForm.get('emailAddress')?.invalid && (createForm.get('emailAddress')?.dirty || createForm.get('emailAddress')?.touched)}"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            <input
+              style="border-radius: 50px"
+              [ngClass]="{
+                'is-invalid':
+                  createForm.get('email')?.invalid &&
+                  (createForm.get('email')?.dirty ||
+                    createForm.get('email')?.touched)
+              }"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
               type="text"
               class="form-control"
               placeholder="Email Address"
               aria-label="Email Address"
-              formControlName = "emailAddress"
+              formControlName="email"
             />
           </div>
         </div>
         <br />
         <div class="row g-3">
           <div class="col">
-
             <!-- Upload Certificate -->
-            <label for="formGroup" class="form-label">Upload Certificate </label>
-            <input style="border-radius: 50px;"
+            <label for="formGroup" class="form-label"
+              >Upload Certificate
+            </label>
+            <input
+              style="border-radius: 50px"
               class="form-control form-control-sm"
-              [ngClass]="{'is-invalid':createForm.get('docFile')?.invalid && (createForm.get('docFile')?.dirty || createForm.get('docFile')?.touched)}"
+              [ngClass]="{
+                'is-invalid':
+                  createForm.get('docFile')?.invalid &&
+                  (createForm.get('docFile')?.dirty ||
+                    createForm.get('docFile')?.touched)
+              }"
               id="formFileSm"
               type="file"
               accept="application/pdf"
               name="doc"
-              formControlName = "docFile"
+              formControlName="docFile"
               value="upload"
-              />
+            />
           </div>
-
 
           <!-- Skill Set & Level -->
           <div class="card p-2">
             <h6>Skill Set & Level :</h6>
-            <div class="card-body"> 
+            <div class="card-body">
               <div class="row">
                 <div class="col">
                   <label for="formGroup" class="form-label my-2">Welder</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="welder">
+                  <select
+                    style="border-radius: 50px"
+                    id="inputState"
+                    class="form-select my-1"
+                    formControlName="welder"
+                  >
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-
                   <label for="formGroup" class="form-label my-2">Fitter</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="fitter">
+                  <select
+                    style="border-radius: 50px"
+                    id="inputState"
+                    class="form-select my-1"
+                    formControlName="fitter"
+                  >
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
@@ -101,65 +138,116 @@
                   </select>
 
                   <label for="formGroup" class="form-label my-2">Rigger</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="rigger">
+                  <select
+                    style="border-radius: 50px"
+                    id="inputState"
+                    class="form-select my-1"
+                    formControlName="rigger"
+                  >
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label my-2">Sacffolder</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="sacffolder">
+                  <label for="formGroup" class="form-label my-2"
+                    >Sacffolder</label
+                  >
+                  <select
+                    style="border-radius: 50px"
+                    id="inputState"
+                    class="form-select my-1"
+                    formControlName="sacffolder"
+                  >
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label my-2">Instrument Tech </label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="instrumentTech">
+                  <label for="formGroup" class="form-label my-2"
+                    >Instrument Tech
+                  </label>
+                  <select
+                    style="border-radius: 50px"
+                    id="inputState"
+                    class="form-select my-1"
+                    formControlName="instrumentTech"
+                  >
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label my-2">Election</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="election">
+                  <label for="formGroup" class="form-label my-2"
+                    >Election</label
+                  >
+                  <select
+                    style="border-radius: 50px"
+                    id="inputState"
+                    class="form-select my-1"
+                    formControlName="election"
+                  >
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label my-2">Mechanic</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="mechanic">
+                  <label for="formGroup" class="form-label my-2"
+                    >Mechanic</label
+                  >
+                  <select
+                    style="border-radius: 50px"
+                    id="inputState"
+                    class="form-select my-1"
+                    formControlName="mechanic"
+                  >
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
 
-                  <label for="formGroup" class="form-label my-2">Crane Operator</label>
-                  <select style="border-radius: 50px;" id="inputState" class="form-select my-1" formControlName="craneOperator">
+                  <label for="formGroup" class="form-label my-2"
+                    >Crane Operator</label
+                  >
+                  <select
+                    style="border-radius: 50px"
+                    id="inputState"
+                    class="form-select my-1"
+                    formControlName="craneOperator"
+                  >
                     <option>Junior</option>
                     <option>Intermediate</option>
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
-
                 </div>
               </div>
             </div>
           </div>
 
           <div class="d-flex justify-content-center">
-
-            <a style="border-radius: 50px;" class="btn btn-secondary" href="#" role="button">Back</a> &nbsp;
-            <button style="border-radius: 50px;" class="btn btn-success" type="submit" [disabled]="!createForm.valid">Save</button>
+            <a
+              style="border-radius: 50px"
+              class="btn btn-secondary"
+              href="#"
+              role="button"
+              >Back</a
+            >
+            &nbsp;
+            <button
+              style="border-radius: 50px"
+              class="btn btn-success"
+              type="submit"
+              [disabled]="!createForm.valid"
+            >
+              Save
+            </button>
           </div>
         </div>
-
       </form>
 
       <br />

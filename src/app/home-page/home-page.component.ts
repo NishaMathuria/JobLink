@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProjectDetailService } from '../services/project-detail.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,9 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private projectService:ProjectDetailService) { }
 
+  projects:any;
   ngOnInit(): void {
+    this.projectService.getProjectDetail().subscribe((data:any)=>{
+      console.log(data);
+      this.projects = data.projects;
+    })
   }
 
 }

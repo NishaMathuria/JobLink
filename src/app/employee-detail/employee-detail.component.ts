@@ -33,7 +33,7 @@ export class EmployeeDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.myservice.getEmployeeDetail().subscribe(response => {
+    this.myservice.getEmployee().subscribe(response => {
       this.employeeDetail = response;
     })
 

@@ -10,6 +10,10 @@ export class ProjectDetailService {
   constructor(private httpClient: HttpClient) { }
 
   getProjectDetail(){
-    return this.httpClient.get(this.url)
+    return this.httpClient.get('http://localhost:4000/api/project')
+  }
+
+  createProject(data:any){
+    return this.httpClient.post('http://localhost:4000/api/newProject',data)
   }
 }
