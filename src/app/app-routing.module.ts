@@ -10,9 +10,9 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'create-project', component: CreateProjectComponent },
-  { path: 'profile', component: EmployeeProfileComponent },
+  { path: 'profile/:id', component: EmployeeProfileComponent },
   { path: 'add-member', component: AddTeamMemberPageComponent },
-  { path: 'employee-detail', component: EmployeeDetailComponent },
+  { path: 'employee-detail/:id', component: EmployeeDetailComponent },
   { path: 'project-detail', component: ProjectDetailComponent },
   { path: '**', redirectTo:'', pathMatch:'full'}
 ];

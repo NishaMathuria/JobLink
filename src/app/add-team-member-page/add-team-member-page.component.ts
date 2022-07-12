@@ -47,6 +47,7 @@ export class AddTeamMemberPageComponent implements OnInit {
   }
 
   onSave() {
+    console.log(this.createForm.value)
     this.myService
       .createEmployee(this.createForm.value)
       .subscribe((response) => {

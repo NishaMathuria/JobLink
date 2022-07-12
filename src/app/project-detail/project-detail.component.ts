@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { response } from 'express';
 import { ProjectDetailService } from '../services/project-detail.service';
@@ -13,7 +14,7 @@ export class ProjectDetailComponent implements OnInit {
   ProjectDetail: any;
   myservice: any;
 
-  constructor(private modalService: NgbModal,myservice:ProjectDetailService) { }
+  constructor(private modalService: NgbModal, myservice:ProjectDetailService, private router: ActivatedRoute) { }
 
   
   open(content: any) {
@@ -28,9 +29,9 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.myservice.getProjectDetail().subscribe((response: any) => {
+    this.myservice.getProjectDetails().subscribe((response: any) => {
       this.ProjectDetail = response;
+      console.log(response);
     })
   }
 

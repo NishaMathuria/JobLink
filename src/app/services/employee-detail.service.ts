@@ -20,4 +20,8 @@ export class EmployeeDetailService {
   createEmployee(data: any) {
     return this.httpClient.post<any>(this.url + '/newEmployee', data);
   }
+
+  getEmployeeById(id: any){
+    return this.httpClient.get(this.url + '/employee/'+id);
+  }
 }

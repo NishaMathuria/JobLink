@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { response } from 'express';
-import { ProfileService } from '../services/profile.service';
 import { ProjectDetailService } from '../services/project-detail.service';
 
 @Component({
@@ -12,11 +10,10 @@ import { ProjectDetailService } from '../services/project-detail.service';
 export class CreateProjectComponent implements OnInit {
 
   createForm!:FormGroup
-  myservice: any;
   profile: any;
   form: null | undefined;
 
-  constructor(private fb:FormBuilder,myservice:ProfileService,private projectService:ProjectDetailService) {
+  constructor(private fb:FormBuilder,private projectService:ProjectDetailService) {
 
     this.createForm = this.fb.group({
       projectTitle:['',Validators.required],
@@ -37,8 +34,7 @@ export class CreateProjectComponent implements OnInit {
   onSubmit(){
     console.log(this.createForm.value);
     this.projectService.createProject(this.createForm.value).subscribe((data)=>{
-      console.log(data);
-      
+      console.log(data); 
     })
     // this.createForm.reset()
   }

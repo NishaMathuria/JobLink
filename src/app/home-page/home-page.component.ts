@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectDetailService } from '../services/project-detail.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProjectDetailService } from '../services/project-detail.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,private projectService:ProjectDetailService) { }
+  constructor(private route: ActivatedRoute,private projectService:ProjectDetailService, private router: Router) { }
 
   projects:any;
   ngOnInit(): void {
@@ -17,6 +17,9 @@ export class HomePageComponent implements OnInit {
       console.log(data);
       this.projects = data.projects;
     })
+  }
+  onClick(id: string){
+    this.router.navigate(['employee-detail/'+id]);
   }
 
 }
