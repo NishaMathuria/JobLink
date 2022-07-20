@@ -6,19 +6,18 @@ import { Injectable } from '@angular/core';
 })
 export class ProjectDetailService {
 
-  private url = '';
+  private url = 'http://localhost:4000/api';
   constructor(private httpClient: HttpClient) { }
 
-  getProjectDetail(page: number){
-    return this.httpClient.get('http://localhost:4000/api/project' + '?page=' + page)
+  getProjectDetail(){
+    return this.httpClient.get(this.url + '/project?page=')
   }
 
   createProject(data:any){
-    return this.httpClient.post('http://localhost:4000/api/newProject',data)
+    return this.httpClient.post(this.url + '/newProject',data)
   }
 
   getProjectById(id: any){
-    return this.httpClient.get('http://localhost:4000/api/project/'+id);
+    return this.httpClient.get(this.url + '/project/'+id);
   }
-
 }

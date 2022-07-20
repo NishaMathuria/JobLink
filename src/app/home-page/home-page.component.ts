@@ -18,7 +18,7 @@ export class HomePageComponent implements OnInit {
 
   projects:any;
   ngOnInit(): void {
-    this.projectService.getProjectDetail(3).subscribe((data:any)=>{
+    this.projectService.getProjectDetail().subscribe((data:any)=>{
       console.log(data);
       this.projects = data.projects;
     })

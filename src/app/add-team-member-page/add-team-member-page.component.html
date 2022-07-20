@@ -1,43 +1,50 @@
-<div class="container p-3">
+<div class="container"> 
+  <div style="background-color:rgb(249, 249, 254)" class="card">
+    <div class="card-header">
+<div class="container p-5">
+  
   <div class="card">
     <div class="card-header">Add Team Member</div>
     <div class="card-body">
       <form [formGroup]="createForm" (ngSubmit)="onSave()">
         <div class="row g-3">
+
+
           <!-- First Name -->
           <div class="col">
-            <input
-              style="border-radius: 50px"
-              [ngClass]="{
-                'is-invalid':
-                  createForm.get('firstName')?.invalid &&
-                  (createForm.get('firstName')?.dirty ||
-                    createForm.get('firstName')?.touched)
-              }"
+            <input style="background-color:rgb(249, 249, 249); border-radius: 50px"
               type="text"
               class="form-control"
               placeholder="First name"
               aria-label="First name"
               formControlName="firstName"
             />
+            <div *ngIf="createForm.get('firstName')?.invalid &&
+            (createForm.get('firstName')?.dirty ||
+              createForm.get('firstName')?.touched)"
+            style="color: red; line-height: 1; height: 2px; margin:5px"
+            >
+            this field is required!
           </div>
-
+          </div>
+  
           <!-- Last Name -->
           <div class="col">
             <input
-              style="border-radius: 50px"
-              [ngClass]="{
-                'is-invalid':
-                  createForm.get('lastName')?.invalid &&
-                  (createForm.get('lastName')?.dirty ||
-                    createForm.get('lastName')?.touched)
-              }"
+              style="background-color:rgb(249, 249, 249); border-radius: 50px"
               type="text"
               class="form-control"
               placeholder="Last name"
               aria-label="Last name"
               formControlName="lastName"
             />
+            <div *ngIf="
+                createForm.get('lastName')?.invalid &&
+                (createForm.get('lastName')?.dirty ||
+                  createForm.get('lastName')?.touched)"
+                  style="color: red; line-height: 1; height: 2px; margin:5px">
+                  this field is required!
+            </div>
           </div>
         </div>
         <br />
@@ -45,13 +52,8 @@
           <!-- Phone Number -->
           <div class="col">
             <input
-              style="border-radius: 50px"
-              [ngClass]="{
-                'is-invalid':
-                  createForm.get('phoneNumber')?.invalid &&
-                  (createForm.get('phoneNumber')?.dirty ||
-                    createForm.get('phoneNumber')?.touched)
-              }"
+              style="background-color:rgb(249, 249, 249); border-radius: 50px"
+              
               pattern="^((\\+91-?)|0)?[0-9]{10}$"
               type="number"
               class="form-control"
@@ -59,18 +61,19 @@
               aria-label="Phone Number"
               formControlName="phoneNumber"
             />
+            <div *ngIf="
+            createForm.get('phoneNumber')?.invalid &&
+            (createForm.get('phoneNumber')?.dirty ||
+              createForm.get('phoneNumber')?.touched)"
+                  style="color: red; line-height: 1; height: 2px; margin:5px">
+                  10 digits required!
+            </div>
           </div>
-
+  
           <!-- Email Address -->
           <div class="col">
             <input
-              style="border-radius: 50px"
-              [ngClass]="{
-                'is-invalid':
-                  createForm.get('email')?.invalid &&
-                  (createForm.get('email')?.dirty ||
-                    createForm.get('email')?.touched)
-              }"
+              style="background-color:rgb(249, 249, 249); border-radius: 50px"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
               type="text"
               class="form-control"
@@ -78,6 +81,13 @@
               aria-label="Email Address"
               formControlName="email"
             />
+            <div *ngIf="
+            createForm.get('email')?.invalid &&
+                  (createForm.get('email')?.dirty ||
+                    createForm.get('email')?.touched)"
+                  style="color: red; line-height: 1; height: 2px; margin:5px">
+                  The Email is not proper!
+            </div>
           </div>
         </div>
         <br />
@@ -88,14 +98,9 @@
               >Upload Certificate
             </label>
             <input
-              style="border-radius: 50px"
+              style="background-color:rgb(249, 249, 249); border-radius: 50px"
               class="form-control form-control-sm"
-              [ngClass]="{
-                'is-invalid':
-                  createForm.get('docFile')?.invalid &&
-                  (createForm.get('docFile')?.dirty ||
-                    createForm.get('docFile')?.touched)
-              }"
+              
               id="formFileSm"
               type="file"
               accept="application/pdf"
@@ -103,17 +108,25 @@
               formControlName="docFile"
               value="upload"
             />
+            <div *ngIf="
+            createForm.get('docFile')?.invalid &&
+                  (createForm.get('docFile')?.dirty ||
+                    createForm.get('docFile')?.touched)"
+                  style="color: red; line-height: 1; height: 2px; margin:5px">
+                  Upload PDF file only!
+            </div>
           </div>
-
+  
           <!-- Skill Set & Level -->
           <div class="card p-2">
             <h6>Skill Set & Level :</h6>
             <div class="card-body">
               <div class="row">
+
                 <div class="col">
                   <label for="formGroup" class="form-label my-2">Welder</label>
                   <select
-                    style="border-radius: 50px"
+                    style="background-color:rgb(249, 249, 249); border-radius: 50px"
                     id="inputState"
                     class="form-select my-1"
                     formControlName="welder"
@@ -123,10 +136,18 @@
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
+                  <div *ngIf="
+                   createForm.get('welder')?.invalid &&
+                   (createForm.get('welder')?.dirty ||
+                   createForm.get('welder')?.touched)"
+                   style="color: red; line-height: 1; height: 2px; margin:5px">
+                  Please select the requirement!
+            </div>
 
+  
                   <label for="formGroup" class="form-label my-2">Fitter</label>
                   <select
-                    style="border-radius: 50px"
+                    style="background-color:rgb(249, 249, 249); border-radius: 50px"
                     id="inputState"
                     class="form-select my-1"
                     formControlName="fitter"
@@ -136,10 +157,18 @@
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
+                  <div *ngIf="
+                   createForm.get('fitter')?.invalid &&
+                   (createForm.get('fitter')?.dirty ||
+                   createForm.get('fitter')?.touched)"
+                   style="color: red; line-height: 1; height: 2px; margin:5px">
+                  Please select the requirement!
+            </div>
 
+  
                   <label for="formGroup" class="form-label my-2">Rigger</label>
                   <select
-                    style="border-radius: 50px"
+                    style="background-color:rgb(249, 249, 249); border-radius: 50px"
                     id="inputState"
                     class="form-select my-1"
                     formControlName="rigger"
@@ -149,12 +178,20 @@
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
+                  <div *ngIf="
+                   createForm.get('rigger')?.invalid &&
+                   (createForm.get('rigger')?.dirty ||
+                   createForm.get('rigger')?.touched)"
+                   style="color: red; line-height: 1; height: 2px; margin:5px">
+                  Please select the requirement!
+            </div>
 
+  
                   <label for="formGroup" class="form-label my-2"
                     >Sacffolder</label
                   >
                   <select
-                    style="border-radius: 50px"
+                    style="background-color:rgb(249, 249, 249); border-radius: 50px"
                     id="inputState"
                     class="form-select my-1"
                     formControlName="sacffolder"
@@ -164,12 +201,20 @@
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
+                  <div *ngIf="
+                   createForm.get('sacffolder')?.invalid &&
+                   (createForm.get('sacffolder')?.dirty ||
+                   createForm.get('sacffolder')?.touched)"
+                   style="color: red; line-height: 1; height: 2px; margin:5px">
+                  Please select the requirement!
+            </div>
 
+                  
                   <label for="formGroup" class="form-label my-2"
                     >Instrument Tech
                   </label>
                   <select
-                    style="border-radius: 50px"
+                    style="background-color:rgb(249, 249, 249); border-radius: 50px"
                     id="inputState"
                     class="form-select my-1"
                     formControlName="instrumentTech"
@@ -179,12 +224,20 @@
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
+                  <div *ngIf="
+                   createForm.get('instrumentTech')?.invalid &&
+                   (createForm.get('instrumentTech')?.dirty ||
+                   createForm.get('instrumentTech')?.touched)"
+                   style="color: red; line-height: 1; height: 2px; margin:5px">
+                  Please select the requirement!
+            </div>
+
 
                   <label for="formGroup" class="form-label my-2"
                     >Election</label
                   >
                   <select
-                    style="border-radius: 50px"
+                    style="background-color:rgb(249, 249, 249); border-radius: 50px"
                     id="inputState"
                     class="form-select my-1"
                     formControlName="election"
@@ -194,12 +247,20 @@
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
+                  <div *ngIf="
+                   createForm.get('election')?.invalid &&
+                   (createForm.get('election')?.dirty ||
+                   createForm.get('election')?.touched)"
+                   style="color: red; line-height: 1; height: 2px; margin:5px">
+                  Please select the requirement!
+            </div>
 
+  
                   <label for="formGroup" class="form-label my-2"
                     >Mechanic</label
                   >
                   <select
-                    style="border-radius: 50px"
+                    style="background-color:rgb(249, 249, 249); border-radius: 50px"
                     id="inputState"
                     class="form-select my-1"
                     formControlName="mechanic"
@@ -209,12 +270,20 @@
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
+                  <div *ngIf="
+                   createForm.get('mechanic')?.invalid &&
+                   (createForm.get('mechanic')?.dirty ||
+                   createForm.get('mechanic')?.touched)"
+                   style="color: red; line-height: 1; height: 2px; margin:5px">
+                  Please select the requirement!
+            </div>
 
+  
                   <label for="formGroup" class="form-label my-2"
                     >Crane Operator</label
                   >
                   <select
-                    style="border-radius: 50px"
+                    style="background-color:rgb(249, 249, 249); border-radius: 50px"
                     id="inputState"
                     class="form-select my-1"
                     formControlName="craneOperator"
@@ -224,39 +293,43 @@
                     <option>Senior</option>
                     <option>Lead</option>
                   </select>
+                  <div *ngIf="
+                   createForm.get('craneOperator')?.invalid &&
+                   (createForm.get('craneOperator')?.dirty ||
+                   createForm.get('craneOperator')?.touched)"
+                   style="color: red; line-height: 1; height: 2px; margin:5px">
+                  Please select the requirement!
+            </div>
+
+
                 </div>
               </div>
             </div>
           </div>
-
+  
           <div class="d-flex justify-content-center">
             <a
-              style="border-radius: 50px"
+              style="background-color:rgb(158, 158, 158); border-radius: 50px"
               class="btn btn-secondary"
               href="#"
               role="button"
               >Back</a
             >
             &nbsp;
-            <button
-              style="border-radius: 50px"
-              class="btn btn-success"
-              type="submit"
-              [disabled]="!createForm.valid"
-            >
-              Save
-            </button>
+              <!-- [disabled]="!createForm.valid" -->
+            <a 
+            style="background-image: linear-gradient(to left, #21CE99, #1AF5B2); border-radius: 50px" 
+            class="btn btn-success" 
+            href="employees" 
+            role="button"
+            >Save</a>
           </div>
         </div>
       </form>
-
+  
       <br />
-      <!-- <nav class="navbar bg-light">
-        <form class="container-fluid justify-content-center">
-          <a style="border-radius: 50px;" class="btn btn-secondary" href="#" role="button">Back</a> &nbsp;
-          <button style="border-radius: 50px;" class="btn btn-success" type="submit" [disabled]="!createForm.valid">Save</button>
-        </form>
-      </nav> -->
     </div>
   </div>
+</div>
+
 </div>

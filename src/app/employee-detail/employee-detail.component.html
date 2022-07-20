@@ -15,52 +15,54 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">On-Going</a>
+          <a style="color:rgb(43, 207, 152)" class="nav-link active" aria-current="page" href="#">On-Going</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Past</a>
+          <a style="color:rgb(115, 115, 115)" class="nav-link" href="#">Past</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Upcoming</a>
+          <a style="color:rgb(115, 115, 115)" class="nav-link" href="#">Upcoming</a>
         </li>
       </ul>
-      <a class="btn btn-outline-success" href="create-project" role="button">Create New Project</a>
+      <a style="background-color:rgb(236, 253, 248); color:rgb(43, 207, 152)" class="btn btn-outline-success" href="create-project" role="button">Create New Project</a>
     </div>
   </div>
 </nav>
 
-<!-- employee detail card 1 -->
-<div class="container p-3">
-  <div class="card">
-    <div class="card-body" *ngIf="ProjectDetail">
 
-      <!-- *ngFor="let information of infoReceived1" {{information}}-->
-      <h5 class="card-title">{{ProjectDetail.projectTitle}}</h5>
-      <span>Supervisor: </span><span class="text-muted">{{ProjectDetail.selectSupervisor}}</span>
-      <p>{{ProjectDetail.projectLocation}}</p>
-
-      <div class="row align-items-center">
-        <div class="col">
-          <span>Project Period:</span
-          ><span class="text-muted">{{ProjectDetail.startDate | date:"dd/MM/yyyy"}} - {{ProjectDetail.endDate | date:"dd/MM/yyyy"}}</span>
+<div class="container">
+<div style="background-color:rgb(249, 249, 254)" class="card">
+  <div class="card-header">
+    <div class="card-body">
+      
+      <div class="card">
+      <div class="card-body" *ngIf="ProjectDetail">
+        <h5 class="card-title">{{ProjectDetail.projectTitle}}</h5>
+        <span>Supervisor: </span><span class="text-muted">{{ProjectDetail.selectSupervisor}}</span>
+        <p>{{ProjectDetail.projectLocation}}</p>
+        
+        <div class="row align-items-center">
+          <div class="col">
+            <span>Project Period:</span
+              ><span class="text-muted">{{ProjectDetail.startDate | date:"dd/MM/yyyy"}} - {{ProjectDetail.endDate | date:"dd/MM/yyyy"}}</span>
+            </div>
+            <div class="col">
+              <span>Number of People Added:</span
+                ><span class="text-muted">{{ProjectDetail.expectedMember}}</span>
+              </div>
+              <div class="col">
+                
+                <a style="color:rgb(43, 207, 152); background-color:rgb(245, 245, 245)"  class="btn btn-light" href="profile/62ce701666fef205a09c128a" role="button">View Profile</a>
+                
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col">
-          <span>Number of People Added:</span
-          ><span class="text-muted">{{ProjectDetail.expectedMember}}</span>
-        </div>
-        <div class="col">
-
-          <a style="color: rgb(13, 255, 0)" class="btn btn-light" href="profile/62ce701666fef205a09c128a" role="button">View Profile</a>
-
-        </div>
-      </div>
-    </div>
   </div>
-</div>
-
-<div class="container ">
-    <span style="color:rgb(123, 192, 54)">Time Sheet</span><span>(John Doe)</span>
-    <nav class="navbar bg-light">
+  
+  <div class="container ">
+    <span style="color:rgb(43, 207, 152); font-size:x-large ;">Time Sheet</span><span style="font-size:x-large ;">(John Doe)</span>
+      <nav class="navbar" style="background-color: #ffffff;">
         <div class="container-fluid">
           <p class="navbar-brand">Week 1</p>
           <div>
@@ -70,186 +72,190 @@
           </div>
         </div>
       </nav>
-</div>
-
-<div class="container p-3" *ngIf="show">
-    <div class="card">
+    </div>
+    
+    <div class="container p-3" *ngIf="show">
+      <div class="card">
         <div class="card-body">
-            <table class="table table-bordered">
-                <thead class="table-light">
-                  <tr>
-                    <th scope="col">Day</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Attendance</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Monday</td>
-                    <td>19th March 2020</td>
-                    <td>Absent</td>
-                  </tr>
-                  <tr>
-                    <td>Tuesday</td>
-                    <td>20th March 2020</td>
-                    <td>present</td>
-                  </tr>
-                  <tr>
-                    <td>Wednesday </td>
-                    <td>21th March 2020</td>
-                    <td>present </td>
+          <table class="table table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Date</th>
+                <th scope="col">Attendance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>19th March 2020</td>
+                <td>Absent</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>20th March 2020</td>
+                <td>present</td>
+              </tr>
+              <tr>
+                <td>Wednesday </td>
+                <td>21th March 2020</td>
+                <td>present </td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>22th March 2020</td>
+                <td>Absent</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>23rd March 2020</td>
+                <td>Absent</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>24th March 2020</td>
+                <td>present</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>25th March 2020</td>
+                <td>Absent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  
+  <div class="container ">
+    <nav class="navbar" style="background-color: #ffffff;">
+      <div class="container-fluid">
+        <p class="navbar-brand">Week 2</p>
+        <div>
+          <button class="mx-2"><i class="bi bi-download"></i></button>
+          <button class="mx-2" (click)="showSheet1()" *ngIf="show1"><i class="bi bi-caret-up-fill"></i></button>
+          <button class="mx-2" (click)="showSheet1()" *ngIf="!show1"><i class="bi bi-caret-down-fill"></i></button>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container p-3" *ngIf="show1">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead class="table-default">
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Date</th>
+              <th scope="col">Attendance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>10th April 2020</td>
+              <td>Absent</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>11th April 2020</td>
+              <td>present</td>
+            </tr>
+            <tr>
+              <td>Wednesday </td>
+              <td>12th April 2020</td>
+              <td>present </td>
                   </tr>
                   <tr>
                     <td>Thursday</td>
-                    <td>22th March 2020</td>
+                    <td>13th April 2020</td>
                     <td>Absent</td>
                   </tr>
                   <tr>
                     <td>Friday</td>
-                    <td>23rd March 2020</td>
+                    <td>14th April 2020</td>
                     <td>Absent</td>
                   </tr>
                   <tr>
                     <td>Saturday</td>
-                    <td>24th March 2020</td>
+                    <td>15th April 2020</td>
                     <td>present</td>
                   </tr>
                   <tr>
                     <td>Sunday</td>
-                    <td>25th March 2020</td>
+                    <td>16th April 2020</td>
                     <td>Absent</td>
                   </tr>
                 </tbody>
-            </table>
+              </table>
+            </div>
+      </div>
+  </div>
+  <div class="container">
+    <nav class="navbar" style="background-color: #ffffff;">
+      <div class="container-fluid">
+        <p class="navbar-brand">Week 3</p>
+        <div>
+          <button class="mx-2"><i class="bi bi-download"></i></button>
+          <button class="mx-2" (click)="showSheet2()" *ngIf="show2"><i class="bi bi-caret-up-fill"></i></button>
+          <button class="mx-2" (click)="showSheet2()" *ngIf="!show2"><i class="bi bi-caret-down-fill"></i></button>
         </div>
       </div>
-</div>
-
-<div class="container ">
-    <nav class="navbar bg-light">
-        <div class="container-fluid">
-          <p class="navbar-brand">Week 2</p>
-          <div>
-            <button class="mx-2"><i class="bi bi-download"></i></button>
-            <button class="mx-2" (click)="showSheet1()" *ngIf="show1"><i class="bi bi-caret-up-fill"></i></button>
-            <button class="mx-2" (click)="showSheet1()" *ngIf="!show1"><i class="bi bi-caret-down-fill"></i></button>
+    </nav>
+  </div>
+  <div class="container p-3" *ngIf="show2">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Day</th>
+                <th scope="col">Date</th>
+                <th scope="col">Attendance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>1st May 2020</td>
+                <td>Absent</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>2nd May 2020</td>
+                <td>present</td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday </td>
+                    <td>3rd May 2020</td>
+                    <td>present </td>
+                  </tr>
+                  <tr>
+                    <td>Thursday</td>
+                    <td>4th May 2020</td>
+                    <td>Absent</td>
+                  </tr>
+                  <tr>
+                    <td>Friday</td>
+                    <td>5th May 2020</td>
+                    <td>Absent</td>
+                  </tr>
+                  <tr>
+                    <td>Saturday</td>
+                    <td>6th May 2020</td>
+                    <td>present</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td>7th May 2020</td>
+                    <td>Absent</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </nav>
-</div>
-<div class="container p-3" *ngIf="show1">
-  <div class="card">
-      <div class="card-body">
-          <table class="table table-bordered">
-              <thead class="table-light">
-                <tr>
-                  <th scope="col">Day</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Attendance</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Monday</td>
-                  <td>10th April 2020</td>
-                  <td>Absent</td>
-                </tr>
-                <tr>
-                  <td>Tuesday</td>
-                  <td>11th April 2020</td>
-                  <td>present</td>
-                </tr>
-                <tr>
-                  <td>Wednesday </td>
-                  <td>12th April 2020</td>
-                  <td>present </td>
-                </tr>
-                <tr>
-                  <td>Thursday</td>
-                  <td>13th April 2020</td>
-                  <td>Absent</td>
-                </tr>
-                <tr>
-                  <td>Friday</td>
-                  <td>14th April 2020</td>
-                  <td>Absent</td>
-                </tr>
-                <tr>
-                  <td>Saturday</td>
-                  <td>15th April 2020</td>
-                  <td>present</td>
-                </tr>
-                <tr>
-                  <td>Sunday</td>
-                  <td>16th April 2020</td>
-                  <td>Absent</td>
-                </tr>
-              </tbody>
-          </table>
       </div>
-    </div>
 </div>
-<div class="container">
-    <nav class="navbar bg-light">
-        <div class="container-fluid">
-          <p class="navbar-brand">Week 3</p>
-          <div>
-            <button class="mx-2"><i class="bi bi-download"></i></button>
-            <button class="mx-2" (click)="showSheet2()" *ngIf="show2"><i class="bi bi-caret-up-fill"></i></button>
-            <button class="mx-2" (click)="showSheet2()" *ngIf="!show2"><i class="bi bi-caret-down-fill"></i></button>
-          </div>
-        </div>
-      </nav>
 </div>
-<div class="container p-3" *ngIf="show2">
-  <div class="card">
-      <div class="card-body">
-          <table class="table table-bordered">
-              <thead class="table-light">
-                <tr>
-                  <th scope="col">Day</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Attendance</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Monday</td>
-                  <td>1st May 2020</td>
-                  <td>Absent</td>
-                </tr>
-                <tr>
-                  <td>Tuesday</td>
-                  <td>2nd May 2020</td>
-                  <td>present</td>
-                </tr>
-                <tr>
-                  <td>Wednesday </td>
-                  <td>3rd May 2020</td>
-                  <td>present </td>
-                </tr>
-                <tr>
-                  <td>Thursday</td>
-                  <td>4th May 2020</td>
-                  <td>Absent</td>
-                </tr>
-                <tr>
-                  <td>Friday</td>
-                  <td>5th May 2020</td>
-                  <td>Absent</td>
-                </tr>
-                <tr>
-                  <td>Saturday</td>
-                  <td>6th May 2020</td>
-                  <td>present</td>
-                </tr>
-                <tr>
-                  <td>Sunday</td>
-                  <td>7th May 2020</td>
-                  <td>Absent</td>
-                </tr>
-              </tbody>
-          </table>
-      </div>
-    </div>
-</div>
+<!-- employee detail card 1 -->

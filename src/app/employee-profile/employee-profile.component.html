@@ -1,118 +1,168 @@
-<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center">
-  <span class="mask bg-gradient-danger opacity-8"></span>
-</div>
-<div id="bg" class="container mt--7">
-  <div class="row">
-    <div class="col-xl-12 order-xl-1">
-      <div class="card bg-white shadow">
-        <div class="card-header bg-white border-0">
-          <div class="row align-items-center">
-            <div class="col-12 text-center">
-              <div class="rounded-circle d-flex justify-content-center">
-                <img src="assets/images/person-logo.jpg" height="100" />
-              </div>
-              <h3>{{EmployeeDetail.firstName}} {{EmployeeDetail.lastName}}</h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-body">
-          <div class="row">
-            <div class="col-sm-4">
-              <button><i class="bi bi-envelope"></i></button> Email:
-              {{EmployeeDetail.email}}
-            </div>
-            <div class="col-sm-4">
-              <button><i class="bi bi-telephone"></i></button> Phone:
-              {{EmployeeDetail.phoneNumber}}
-            </div>
-            <div class="col-sm-4">
-              <button><i class="bi bi-calendar-day"></i></button> Date of birth:
-              25 Sep 1999
-            </div>
-          </div>
-          <hr />
-
-          <div class="row pl-4">
-            <div class="col-6">
-              <i class="bi bi-geo-alt"
-                >Address: House 181,building 12, Ahmedabad
-              </i>
-              <br />
-              <i class="bi bi-coin">Daily wages: 300 N</i>
-            </div>
-          </div>
-        </div>
-        <hr />
-
+<div class="container">
+  <div style="background-color: rgb(249, 249, 254)" class="card">
+    <div class="card-header">
+      <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center">
+        <span class="mask bg-gradient-danger opacity-8"></span>
+      </div>
+      <div id="bg" class="container mt--7">
         <div class="row">
-          <div class="col-6">
-            <div class="col-12 bg-secondary text-white p-4 fs-4">
-              Educational Details & Skill Sets:
-            </div>
-            <div class="col-12 bg-light p-4">
-              <span class="text-muted">Most Recent Education Degree:</span>
-              mining Engineer
-            </div>
+          <div class="col-xl-12 order-xl-1">
+            <div class="card bg-white shadow">
+              <div style="background-color: rgb(43, 207, 152)" class="row">
+                <!-- <h6>hello</h6> -->
+              </div>
+              <div class="card-header bg-white border-0">
+                <div class="row align-items-center">
+                  <div class="col-12 text-center">
+                    <div class="rounded-circle d-flex justify-content-center">
+                      <div class="rounded-circle">
+                        <img
+                          src="assets/images/women person.png"
+                          class="rounded-circle"
+                          height="100px"
+                          width="100px"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <h1>
+                        {{ EmployeeDetail.firstName }}
+                        {{ EmployeeDetail.lastName }}
+                      </h1>
+                    </div>
+                  </div>
+                </div>
 
-            <!-- (contextmenu)="onRightClick()" -->
-            <div class="col-12">
-              <p>Certificate</p>
-              <img width="300" src="assets/images/certificate.webp" />
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="col-12 bg-secondary text-white p-4 fs-4">
-              Skill Sets & Level:
-            </div>
-            <div class="col-12 bg-light p-2">
-              <div class="d-flex mx-2 justify-content-between align-items-center">
-                <span class="text-muted">Welder</span><span>{{EmployeeDetail.welder}}</span>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <button style="background-color:rgb(79, 79, 79); color:aliceblue; border-radius: 50px"><i  class="bi bi-envelope"></i></button> Email:
+                      {{ EmployeeDetail.email }}
+                    </div>
+                    <div class="col-sm-4">
+                      <button style="background-color:rgb(79, 79, 79); color:aliceblue; border-radius: 50px"><i class="bi bi-telephone"></i></button> Phone:
+                      {{ EmployeeDetail.phoneNumber }}
+                    </div>
+                    <div class="col-sm-4">
+                      <button style="background-color:rgb(79, 79, 79); color:aliceblue; border-radius: 50px"><i class="bi bi-calendar-day"></i></button> Date
+                      of birth: 25 Sep 1999
+                    </div>
+                  </div>
+                  <hr />
+
+                  <div class="row pl-4">
+                    <div class="col-6">
+                      <i style="color:rgb(43, 207, 152)" class="bi bi-geo-alt"
+                      >
+                    </i>&nbsp;
+                      <span class="text-muted">Address:</span>
+                      <span> House 181,building 12, Ahmedabad</span>
+                      <br />
+                      <i style="color:rgb(43, 207, 152)" class="bi bi-coin"
+                      >
+                    </i>&nbsp;
+                        <span class="text-muted">Daily wages:</span>
+                        <span> 300 N </span>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-6">
+                    <div class="col-12 bg-secondary text-white p-3 fs-10">
+                      Educational Details & Skill Sets:
+                    </div>
+                    <div class="col-12 bg-light p-3">
+                      <span class="text-muted"
+                        >Most Recent Education Degree:</span
+                      >
+                      mining Engineer
+                    </div>
+
+                    <div class="col-12">
+                      <p>Certificate</p>
+                      <img width="300" src="assets/images/certificate.webp" />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="col-12 bg-secondary text-white p-3 fs-10">
+                      Skill Sets & Level:
+                    </div>
+                    <div class="col-12 bg-light p-2">
+                      <div
+                        class="d-flex mx-2 justify-content-between align-items-center"
+                      >
+                        <span class="text-muted">Welder</span
+                        ><span>{{ EmployeeDetail.welder }}</span>
+                      </div>
+                    </div>
+
+                    <div class="col-12 bg-light p-2">
+                      <div
+                        class="d-flex mx-2 justify-content-between align-items-center"
+                      >
+                        <span class="text-muted">Fitter</span
+                        ><span>{{ EmployeeDetail.fitter }}</span>
+                      </div>
+                    </div>
+
+                    <div class="col-12 bg-light p-2">
+                      <div
+                        class="d-flex mx-2 justify-content-between align-items-center"
+                      >
+                        <span class="text-muted">Rigger</span
+                        ><span>{{ EmployeeDetail.rigger }}</span>
+                      </div>
+                    </div>
+
+                    <div class="col-12 bg-light p-2">
+                      <div
+                        class="d-flex mx-2 justify-content-between align-items-center"
+                      >
+                        <span class="text-muted">Sacffolder</span
+                        ><span>{{ EmployeeDetail.sacffolder }}</span>
+                      </div>
+                    </div>
+
+                    <div class="col-12 bg-light p-2">
+                      <div
+                        class="d-flex mx-2 justify-content-between align-items-center"
+                      >
+                        <span class="text-muted">Instrument Tech </span
+                        ><span>{{ EmployeeDetail.instructionTech }}</span>
+                      </div>
+                    </div>
+
+                    <div class="col-12 bg-light p-2">
+                      <div
+                        class="d-flex mx-2 justify-content-between align-items-center"
+                      >
+                        <span class="text-muted">Election</span
+                        ><span>{{ EmployeeDetail.election }}</span>
+                      </div>
+                    </div>
+
+                    <div class="col-12 bg-light p-2">
+                      <div
+                        class="d-flex mx-2 justify-content-between align-items-center"
+                      >
+                        <span class="text-muted">Mechanic</span
+                        ><span>{{ EmployeeDetail.mechanic }}</span>
+                      </div>
+                    </div>
+
+                    <div class="col-12 bg-light p-2">
+                      <div
+                        class="d-flex mx-2 justify-content-between align-items-center"
+                      >
+                        <span class="text-muted">Crane Operator </span
+                        ><span>{{ EmployeeDetail.craneOperator }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div class="col-12 bg-light p-2">
-              <div class="d-flex mx-2 justify-content-between align-items-center">
-                <span class="text-muted">Fitter</span><span>{{EmployeeDetail.fitter}}</span>
-              </div>
-            </div>
-
-            <div class="col-12 bg-light p-2">
-              <div class="d-flex mx-2 justify-content-between align-items-center">
-                <span class="text-muted">Rigger</span><span>{{EmployeeDetail.rigger}}</span>
-              </div>
-            </div>
-
-            <div class="col-12 bg-light p-2">
-              <div class="d-flex mx-2 justify-content-between align-items-center">
-                <span class="text-muted">Sacffolder</span><span>{{EmployeeDetail.sacffolder}}</span>
-              </div>
-            </div>
-
-            <div class="col-12 bg-light p-2">
-              <div class="d-flex mx-2 justify-content-between align-items-center">
-                <span class="text-muted">Instrument Tech </span><span>{{EmployeeDetail.instructionTech}}</span>
-              </div>
-            </div>
-
-            <div class="col-12 bg-light p-2">
-              <div class="d-flex mx-2 justify-content-between align-items-center">
-                <span class="text-muted">Election</span><span>{{EmployeeDetail.election}}</span>
-              </div>
-            </div>
-
-            <div class="col-12 bg-light p-2">
-              <div class="d-flex mx-2 justify-content-between align-items-center">
-                <span class="text-muted">Mechanic</span><span>{{EmployeeDetail.mechanic}}</span>
-              </div>
-            </div>
-
-            <div class="col-12 bg-light p-2">
-              <div class="d-flex mx-2 justify-content-between align-items-center">
-                <span class="text-muted">Crane Operator </span><span>{{EmployeeDetail.craneOperator}}</span>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>

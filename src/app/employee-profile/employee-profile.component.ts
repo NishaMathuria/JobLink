@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EmployeeDetailService } from '../services/employee-detail.service';
-import { ProjectDetailService } from '../services/project-detail.service';
-
-
 
 @Component({
   selector: 'app-employee-profile',
@@ -25,9 +22,4 @@ export class EmployeeProfileComponent implements OnInit {
       })
     })
   }
-
-  // onRightClick(event: { preventDefault: () => void; }){
-  //   event.preventDefault();
-  // }
-
 }

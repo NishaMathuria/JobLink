@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand bg-light">
-  <div class="container">
+  <div style="background-color:rgb(249, 249, 254)" class="container">
     <button
       class="navbar-toggler"
       type="button"
@@ -16,61 +16,62 @@
        
        <!-- on-going -->
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">On-Going</a>
+          <a style="color:rgb(43, 207, 152)" class="nav-link active" aria-current="page" href="#">On-Going</a>
         </li>
 
         <!-- past -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Past</a>
+          <a style="color:rgb(115, 115, 115)" class="nav-link" href="#">Past</a>
         </li>
 
         <!-- upcoming -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Upcoming</a>
+          <a style="color:rgb(115, 115, 115)" class="nav-link" href="#">Upcoming</a>
         </li>
 
       </ul>
-      <a class="btn btn-outline-success" href="create-project" role="button">Create New Project</a>
+      <a style="background-color:rgb(236, 253, 248); color:rgb(43, 207, 152)" class="btn btn-outline-success" href="create-project" role="button">Create New Project</a>
     </div>
   </div>
 </nav>
 
-<div class="container p-3">
-    <div class="card" *ngFor="let project of projects | paginate: { itemsPerPage: 3, currentPage: p, totalItems: total }">
-      <div class="card-body" (click)="onClick(project._id)">
-        <h5 class="card-title">{{project.projectTitle}}</h5>
-        <span>Supervisor: </span><span class="text-muted">{{project.selectSupervisor}}</span>
-        <p>{{project.projectLocation}}</p>
-    </div>
-    <div class="card border m-2">
-        <div class="card-body text">
-            <span>Project Period </span><span class="text-muted">{{project.startDate | date:'dd/MM/yyyy'}} - {{project.endDate | date: 'dd/MM/yyyy'}}</span>
-            <br>
-            <span>Number Of People Added </span><span class="text-muted">{{project.expectedMember}}</span>
-        </div>
-      </div>
-      </div>
-      <br>
-</div>
-
-
-<!-- pagination -->
-
 <div class="container">
-<nav aria-label="Page navigation ">
+  <div style="background-color:rgb(249, 249, 254)" class="card">
+    <div class="card-header">
+      <div class="container p-3">
+        <div class="card" *ngFor="let project of projects | paginate: { itemsPerPage: 3, currentPage: p, totalItems: total }">
+          <div class="card-body" (click)="onClick(project._id)">
+            <h5 class="card-title">{{project.projectTitle}}</h5>
+            <span>Supervisor: </span><span class="text-muted">{{project.selectSupervisor}}</span>
+            <p>{{project.projectLocation}}</p>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-body-end text">
+                  <span>Project Period </span><span class="text-muted">{{project.startDate | date:'dd/MM/yyyy'}} - {{project.endDate | date: 'dd/MM/yyyy'}}</span>
+                  <br>
+                  <span>Number Of People Added </span><span class="text-muted">{{project.expectedMember}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    
+    
+    <!-- pagination -->
+    
+    <div class="container">
+      <nav aria-label="Page navigation ">
         <ul class="pagination justify-content-end">
-
+          
           <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
-
-          <!-- <li class="page-item disabled">
-            <a class="page-link">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li> -->
         </ul>
       </nav>
+    </div>
+  </div>
+</div>
 </div>

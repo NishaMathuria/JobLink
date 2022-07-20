@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { EmployeesInfoComponent } from './employees-info/employees-info.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     EmployeeProfileComponent,
     EmployeeDetailComponent,
     AddTeamMemberPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    EmployeesInfoComponent
   ],
   imports: [
     BrowserModule,

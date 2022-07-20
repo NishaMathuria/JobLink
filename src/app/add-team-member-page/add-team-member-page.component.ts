@@ -9,7 +9,6 @@ import { EmployeeDetailService } from '../services/employee-detail.service';
   styleUrls: ['./add-team-member-page.component.css'],
 })
 export class AddTeamMemberPageComponent implements OnInit {
-  uploadField = document.getElementById('file');
 
   value: any;
   files: any;
@@ -52,17 +51,8 @@ export class AddTeamMemberPageComponent implements OnInit {
       .createEmployee(this.createForm.value)
       .subscribe((response) => {
         this.myService.employee.next(response);
-        this.createForm.reset();
         this.router.navigate(['']);
       });
+      this.createForm.reset();
   }
-
-  // onSelectFile (event:any) {
-  //   const allowed_type = ['application/pdf']
-  //   if(this.files.size > 5 *1024 && this.files.type !== allowed_type) {
-  //     this.warning = true;
-  //   } else {
-  //     this.warning = false;
-  //   }
-  // }
 }

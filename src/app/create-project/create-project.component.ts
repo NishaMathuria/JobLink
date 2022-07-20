@@ -36,7 +36,7 @@ export class CreateProjectComponent implements OnInit {
     this.projectService.createProject(this.createForm.value).subscribe((data)=>{
       console.log(data); 
     })
-    // this.createForm.reset()
+    this.createForm.reset()
   }
 
 }
