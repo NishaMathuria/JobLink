@@ -1,31 +1,37 @@
 <nav
   class="navbar navbar-expand-lg navbar-light shadow-sm"
   style="background-color: #fdfdfd"
-
 >
   <div class="container-fluid justify-content-center" style="padding: 0 6rem">
     <a class="navbar-brand" href="#">
-        <img src="assets/images/new-logo.png" alt="" width="70" height="24" class="d-inline-block align-text-top">
-        
-      </a>
-  
-    
-     
+      <img
+        src="assets/images/new-logo.png"
+        alt=""
+        width="70"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+    </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- List of Nav links -->
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a style="color:rgb(43, 207, 152);" class="nav-link active" aria-current="page" href="#">My Project</a>
+          <a
+            style="color: rgb(43, 207, 152)"
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            >My Project</a
+          >
         </li>
 
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">My Team</a>
-          </li>
-       
+          <a class="nav-link active" aria-current="page" href="#">My Team</a>
+        </li>
       </ul>
       <!-- List of Buttons -->
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-        <li class="nav-item"><i class="bi bi-bell fs-4"></i></li>
+        <li class="nav-item"><i class="bi bi-bell fs-4 me-2"></i></li>
         <li ngbDropdown class="nav-item dropdown">
           <div class="d-flex algin-items-center">
             <img
@@ -44,11 +50,14 @@
             >
               Hi Sara Jonas
             </a>
-            <ul ngbDropdownMenu
-            class="dropdown-menu"
-            aria-labelledby="navbarDropdown">
-
-              <li class="dropdown-item"><a routerLink="/profile/62ce701666fef205a09c128a">Profile</a></li>
+            <ul
+              ngbDropdownMenu
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdown"
+            >
+              <li class="dropdown-item">
+                <a routerLink="/profile">Profile</a>
+              </li>
               <li><a class="dropdown-item" href="#"></a>Logout</li>
             </ul>
           </div>

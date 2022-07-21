@@ -12,15 +12,15 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'create-project', component: CreateProjectComponent },
   { path: 'profile/:id', component: EmployeeProfileComponent },
-  { path: 'add-member', component: AddTeamMemberPageComponent },
+  { path: 'add-member/:id', component: AddTeamMemberPageComponent },
   { path: 'employee-detail/:id', component: EmployeeDetailComponent },
-  { path: 'employees', component:EmployeesInfoComponent },
+  { path: 'employees', component: EmployeesInfoComponent },
   { path: 'project-detail/:id', component: ProjectDetailComponent },
-  { path: '**', redirectTo:'', pathMatch:'full'}
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

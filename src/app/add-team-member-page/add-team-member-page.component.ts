@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeDetailService } from '../services/employee-detail.service';
 
 @Component({
@@ -9,16 +9,17 @@ import { EmployeeDetailService } from '../services/employee-detail.service';
   styleUrls: ['./add-team-member-page.component.css'],
 })
 export class AddTeamMemberPageComponent implements OnInit {
-
   value: any;
   files: any;
   employee: any;
+  projectId!: string;
 
   createForm!: FormGroup;
   warning: boolean | undefined;
   constructor(
     private fb: FormBuilder,
     private myService: EmployeeDetailService,
+    private route: ActivatedRoute,
     private router: Router
   ) {
     this.createForm = this.fb.group({
@@ -31,7 +32,7 @@ export class AddTeamMemberPageComponent implements OnInit {
       fitter: ['', Validators.required],
       rigger: ['', Validators.required],
       sacffolder: ['', Validators.required],
-      instrumentTech: ['', Validators.required],
+      instructionTech: ['', Validators.required],
       election: ['', Validators.required],
       mechanic: ['', Validators.required],
       craneOperator: ['', Validators.required],
@@ -39,6 +40,10 @@ export class AddTeamMemberPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params: any) => {
+      this.projectId = params.id;
+    });
+
     this.myService.employee.subscribe((currentEmployee) => {
       this.employee = currentEmployee;
       console.log(this.employee);
@@ -46,13 +51,16 @@ export class AddTeamMemberPageComponent implements OnInit {
   }
 
   onSave() {
-    console.log(this.createForm.value)
+    console.log(this.createForm.value);
     this.myService
-      .createEmployee(this.createForm.value)
+      .createEmployee(this.createForm.value, this.projectId)
       .subscribe((response) => {
+        // console.log(response);
         this.myService.employee.next(response);
+        this.createForm.reset();
         this.router.navigate(['']);
       });
-      this.createForm.reset();
   }
+
+  
 }

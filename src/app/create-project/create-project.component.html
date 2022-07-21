@@ -1,190 +1,277 @@
-<div class="container"> 
-<div style="background-color:rgb(249, 249, 254)" class="card">
-  <div class="card-header">
+<div class="container">
+  <div style="background-color: rgb(249, 249, 254)" class="card border-0 mt-3">
     <div class="container p-5">
       <div class="card">
-    <span class="ms-2 mt-2">Create Project :</span>
-    <hr />
-    <div class="card-body">
-      <form [formGroup]="createForm" (ngSubmit)="onSubmit()" action="" method="post">
-
-        <!-- projectTitle -->
-        <div class="mb-3 ">
-          <input style="background-color:rgb(249, 249, 249); border-radius: 50px"
-          class="form-control"
-          placeholder="Project Title"
-          type="text"
-          name="Title"
-          formControlName = "projectTitle"
-          />
-          <div *ngIf="
-          createForm.get('projectTitle')?.invalid && 
-          (createForm.get('projectTitle')?.dirty || 
-          createForm.get('projectTitle')?.touched)"
-                  style="color: red; line-height: 1; height: 2px; margin:5px">
-                  Project Title is required!
+        <span class="ms-2 mt-2">Create Project :</span>
+        <hr/>
+        <div class="card-body">
+          <form
+            [formGroup]="createForm"
+            (ngSubmit)="onSubmit()"
+            action=""
+            method="post"
+          >
+            <!-- projectTitle -->
+            <div class="mb-3">
+              <input
+                style="
+                  background-color: rgb(249, 249, 249);
+                  border-radius: 50px; top: 20px;
+                     font-size: 15px; height:60px;"
+                class="form-control"
+                placeholder="Project Title"
+                type="text"
+                name="Title"
+                formControlName="projectTitle"
+              />
+              <div
+                *ngIf="
+                  createForm.get('projectTitle')?.invalid &&
+                  (createForm.get('projectTitle')?.dirty ||
+                    createForm.get('projectTitle')?.touched)
+                "
+                style="color: red; line-height: 1; height: 2px; margin: 5px"
+              >
+                Project Title is required!
+              </div>
             </div>
-        </div>
+            <br>
 
-        <!-- projectDescription -->
-        <div class="mb-3">
-          <textarea style="background-color:rgb(249, 249, 249); border-radius: 50px"
-          class="form-control"
-          placeholder="Project Description"
-          type="text"
-          name="Project Description"
-          formControlName = "projectDescription"
-          ></textarea>
-          <div *ngIf="
-          createForm.get('projectDescription')?.invalid && (createForm.get('projectDescription')?.dirty || createForm.get('projectDescription')?.touched)"
-                  style="color: red; line-height: 1; height: 2px; margin:5px">
-            Project Description is required!
-          </div>
-        </div>
-        
-        <!-- startDate -->
-        <div class="row">
-          <div class="col">
-            <label for="formGroup" class="form-label">Start Date </label>
-            <input style="background-color:rgb(249, 249, 249); border-radius: 50px"
-            class="form-control"
-            placeholder="Start date"
-            type="date"
-            id="start date"
-            name="start date"
-            formControlName = "startDate"
-            />
-            <div *ngIf="
-            createForm.get('startDate')?.invalid && (createForm.get('startDate')?.dirty || createForm.get('startDate')?.touched)"
-                  style="color: red; line-height: 1; height: 2px; margin:5px">
-            Please select the Start Date!
-          </div>
-          </div>
+            <!-- projectDescription -->
+            <div class="mb-3">
+              <textarea
+                style="
+                  background-color: rgb(249, 249, 249);
+                  border-radius: 50px; top: 20px;
+                     font-size: 15px; height:80px;
+                "
+                class="form-control"
+                placeholder="Project Description"
+                type="text"
+                name="Project Description"
+                formControlName="projectDescription"
+              ></textarea>
+              <div
+                *ngIf="
+                  createForm.get('projectDescription')?.invalid &&
+                  (createForm.get('projectDescription')?.dirty ||
+                    createForm.get('projectDescription')?.touched)
+                "
+                style="color: red; line-height: 1; height: 2px; margin: 5px"
+              >
+                Project Description is required!
+              </div>
+            </div>
+            <br>
+            <!-- startDate -->
+            <div class="row">
+              <div class="col">
+                <label for="formGroup" class="form-label">Start Date </label>
+                <input
+                  style="
+                    background-color: rgb(249, 249, 249);
+                    border-radius: 50px; top: 20px;
+                     font-size: 15px; height: 50px;
+                  "
+                  class="form-control"
+                  placeholder="Start date"
+                  type="date"
+                  id="start date"
+                  name="start date"
+                  [min]="currentDate"
+                  formControlName="startDate"
+                />
+                <div
+                  *ngIf="
+                    createForm.get('startDate')?.invalid &&
+                    (createForm.get('startDate')?.dirty ||
+                      createForm.get('startDate')?.touched)
+                  "
+                  style="color: red; line-height: 1; height: 2px; margin: 5px"
+                >
+                  Please select the Start Date!
+                </div>
+              </div>
+              <br>
 
-          <!-- endDate -->
-          <div class="col">
-            <label for="formGroup" class="form-label">End Date</label>
-            <input style="background-color:rgb(249, 249, 249); border-radius: 50px"
-            class="form-control"
-            placeholder="End date"
-            type="date"
-            id="end date"
-            name="end date"
-            formControlName = "endDate"
-            />
-            <div *ngIf="
-            createForm.get('endDate')?.invalid && (createForm.get('endDate')?.dirty || createForm.get('endDate')?.touched)"
-                  style="color: red; line-height: 1; height: 2px; margin:5px">
-            Please select the End Date!
-          </div>
-          </div>
-        </div>
-        
-        <br />
-        <!-- projectLocation -->
-        <div class="mb-3">
-          <textarea style="background-color:rgb(249, 249, 249); border-radius: 50px"
-          class="form-control"
-          placeholder="Project Location"
-          type="text"
-          name="Project Location"
-          formControlName = "projectLocation"
-          ></textarea>
-          <div *ngIf="
-          createForm.get('projectLocation')?.invalid && (createForm.get('projectLocation')?.dirty || createForm.get('projectLocation')?.touched)"
-                  style="color: red; line-height: 1; height: 2px; margin:5px">
-            Please enter the Location!
-          </div>
-        </div>
-        
-        <!-- selectSupervisor -->
-        <div class="row">
-          <div class="col">
-            <select 
-            style="background-color:rgb(249, 249, 249); border-radius: 50px" 
-            id="inputState" 
-            class="form-select" 
-            formControlName = "selectSupervisor" 
-            >
-            <option selected value="">select Supervisor</option>
-            <option value="Robert">Robert</option>
-            <option value="John">John</option>
-            <option value="Helly">Helly</option>
-            <option value="Chris">Chris</option>
-          </select>
-          <div *ngIf="
-          createForm.get('selectSupervisor')?.invalid && (createForm.get('selectSupervisor')?.dirty || createForm.get('selectSupervisor')?.touched)"
-                  style="color: red; line-height: 1; height: 2px; margin:5px">
-            Please select the Supervisor!
-          </div>
-        </div>
+              <!-- endDate -->
+              <div class="col">
+                <label for="formGroup" class="form-label">End Date</label>
+                <input
+                  style="
+                    background-color: rgb(249, 249, 249);
+                    border-radius: 50px; top: 20px;
+                    font-size: 15px; height: 50px;
+                  "
+                  class="form-control"
+                  placeholder="End date"
+                  type="date"
+                  id="end date"
+                  name="end date"
+                  [min]="currentDate"
+                  formControlName="endDate"
+                />
+                <div
+                  *ngIf="
+                    createForm.get('endDate')?.invalid &&
+                    (createForm.get('endDate')?.dirty ||
+                      createForm.get('endDate')?.touched)
+                  "
+                  style="color: red; line-height: 1; height: 2px; margin: 5px"
+                >
+                  Please select the End Date!
+                </div>
+              </div>
+            </div>
+            <br>
+            <br />
+            <!-- projectLocation -->
+            <div class="mb-3">
+              <textarea
+                style="
+                  background-color: rgb(249, 249, 249);
+                  border-radius: 50px; top: 20px;
+                  font-size: 15px; height:80px;
+                "
+                class="form-control"
+                placeholder="Project Location"
+                type="text"
+                name="Project Location"
+                formControlName="projectLocation"
+              ></textarea>
+              <div
+                *ngIf="
+                  createForm.get('projectLocation')?.invalid &&
+                  (createForm.get('projectLocation')?.dirty ||
+                    createForm.get('projectLocation')?.touched)
+                "
+                style="color: red; line-height: 1; height: 2px; margin: 5px"
+              >
+                Please enter the Location!
+              </div>
+            </div>
+            <br>
 
-        <!-- expectedMember -->
-        <div class="col">
-            <select 
-            style="background-color:rgb(249, 249, 249); border-radius: 50px" 
-            id="inputState" 
-            class="form-select" 
-            formControlName = "expectedMember" 
-            >
-            <option value="">Expected Members</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-          <div *ngIf="
-          createForm.get('expectedMember')?.invalid && (createForm.get('expectedMember')?.dirty || createForm.get('expectedMember')?.touched)"
-                  style="color: red; line-height: 1; height: 2px; margin:5px">
-            Please select the Members!
-          </div>
+            <!-- selectSupervisor -->
+            <div class="row">
+              <div class="col">
+                <select
+                  style="
+                    background-color: rgb(249, 249, 249);
+                    border-radius: 50px; top: 20px;
+                     font-size: 15px; height: 50px;
+                  "
+                  id="inputState"
+                  class="form-select"
+                  formControlName="selectSupervisor"
+                >
+                  <option selected value="">select Supervisor</option>
+                  <option
+                    *ngFor="let employee of employees"
+                    [value]="employee._id"
+                  >
+                    {{ employee.firstName }} {{ employee.lastName }}
+                  </option>
+                </select>
+                <div
+                  *ngIf="
+                    createForm.get('selectSupervisor')?.invalid &&
+                    (createForm.get('selectSupervisor')?.dirty ||
+                      createForm.get('selectSupervisor')?.touched)
+                  "
+                  style="color: red; line-height: 1; height: 2px; margin: 5px"
+                >
+                  Please select the Supervisor!
+                </div>
+              </div>
+              <br>
+
+              <!-- expectedMember -->
+              <div class="col">
+                <select
+                  style="
+                    background-color: rgb(249, 249, 249);
+                    border-radius: 50px; top: 20px;
+                    font-size: 15px; height: 50px;
+                  "
+                  id="inputState"
+                  class="form-select"
+                  formControlName="expectedMember"
+                >
+                  <option value="">Expected Members</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <div
+                  *ngIf="
+                    createForm.get('expectedMember')?.invalid &&
+                    (createForm.get('expectedMember')?.dirty ||
+                      createForm.get('expectedMember')?.touched)
+                  "
+                  style="color: red; line-height: 1; height: 2px; margin: 5px"
+                >
+                  Please select the Members!
+                </div>
+              </div>
+            </div>
+            <br>
+            <br />
+
+            <!-- addUser -->
+            <div class="row">
+              <div class="col">
+                <select
+                  style="
+                    background-color: rgb(249, 249, 249);
+                    border-radius: 50px; top: 20px;
+                    font-size: 15px; height: 50px; width: 570px;
+                  "
+                  id="inputState"
+                  class="form-select"
+                  formControlName="addUser"
+                >
+                  <option value="">Select User</option>
+                  <option
+                    *ngFor="let employee of employees"
+                    [value]="employee._id"
+                  >
+                    {{ employee.firstName }} {{ employee.lastName }}
+                  </option>
+                </select>
+                <div
+                  *ngIf="
+                    createForm.get('addUser')?.invalid &&
+                    (createForm.get('addUser')?.dirty ||
+                      createForm.get('addUser')?.touched)
+                  "
+                  style="color: red; line-height: 1; height: 2px; margin: 5px"
+                >
+                  Please select the User!
+                </div>
+              </div>
+            </div>
+            <br>
+
+            <br />
+            <div class="d-grid gap-2 col-4 mx-auto">
+              <button
+                style="
+                  border-radius: 50px;
+                  background-image: linear-gradient(to left, #21ce99, #1af5b2);height: 60px; width: 300px;font-size: 20px
+                "
+                class="btn btn-success"
+                type="submit"
+                [disabled]="!createForm.valid"
+              >
+                Proceed To Submit
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-      
-      <br />
-
-      <!-- addUser -->
-      <div class="row">
-        <div class="col">
-          <select 
-          style="background-color:rgb(249, 249, 249); border-radius: 50px" 
-          id="inputState" 
-          class="form-select" 
-          formControlName = "addUser" 
-          placeholder="">
-          <option value="">Add User</option>
-            <option value="Robert">Robert</option>
-            <option value="John">John</option>
-            <option value="Helly">Helly</option>
-            <option value="Chris">Chris</option>
-          </select>
-          <div *ngIf="
-          createForm.get('addUser')?.invalid && (createForm.get('addUser')?.dirty || createForm.get('addUser')?.touched)"
-                  style="color: red; line-height: 1; height: 2px; margin:5px">
-            Please select the User!
-          </div>
-        </div>
-      </div>
-      
-      <br />
-      <div class="d-grid gap-2 col-4 mx-auto">
-        <button style="border-radius: 50px; background-image: linear-gradient(to left, #21CE99, #1AF5B2);" class="btn btn-success" type="submit" [disabled]="!createForm.valid">Submit</button>
-        
-        <!-- <a 
-        style="border-radius: 50px; background-image: linear-gradient(to left, #21CE99, #1AF5B2);" 
-        class="btn btn-success" 
-        href="#" 
-        type="submit"  
-        >Save</a> -->
-      </div>
-    </form>
+    </div>
   </div>
-</div>
-  </div>
-</div>
-</div>
 </div>

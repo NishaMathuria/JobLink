@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EmployeesInfoComponent } from './employees-info/employees-info.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +35,8 @@ import { EmployeesInfoComponent } from './employees-info/employees-info.componen
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    // Ng2FileSizeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

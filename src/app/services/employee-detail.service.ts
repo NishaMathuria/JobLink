@@ -6,7 +6,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class EmployeeDetailService {
-  
   private url = 'http://localhost:4000/api';
   employee = new BehaviorSubject(null);
 
@@ -15,14 +14,19 @@ export class EmployeeDetailService {
   getEmployee() {
     return this.httpClient.get(this.url + '/employee');
   }
-  getEmployeeDetail(){
-    return this.httpClient.get(this.url + '/')
-  }
-  createEmployee(data: any) {
-    return this.httpClient.post<any>(this.url + '/newEmployee', data);
+
+  getEmployeeDetail() {
+    return this.httpClient.get(this.url + '/');
   }
 
-  getEmployeeById(id: any){
-    return this.httpClient.get(this.url + '/employee/'+id);
+  createEmployee(data: any, projectId: string) {
+    return this.httpClient.post<any>(this.url + '/newEmployee', {
+      data,
+      projectId,
+    });
+  }
+
+  getEmployeeById(id: any) {
+    return this.httpClient.get(this.url + '/employee/' + id);
   }
 }
