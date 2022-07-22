@@ -54,7 +54,9 @@
             <h5 class="card-title">{{ ProjectDetail.projectTitle }}</h5>
             <span>Supervisor: </span
             ><span class="text-muted">{{
-              ProjectDetail.selectSupervisor
+              ProjectDetail.selectSupervisor.firstName
+            }} {{
+              ProjectDetail.selectSupervisor.lastName
             }}</span>
             <p>{{ ProjectDetail.projectLocation }}</p>
 
@@ -73,16 +75,15 @@
                 }}</span>
               </div>
               <div class="col">
-                <a
+                <button
                   style="
                     color: rgb(43, 207, 152);
                     background-color: rgb(245, 245, 245);
                   "
                   class="btn btn-light"
-                  
+                  (click)="onClick(ProjectDetail.selectSupervisor._id)"
                   role="button"
-                  >View Profile</a
-                >
+                  >View Profile</button>
               </div>
             </div>
           </div>
@@ -92,8 +93,10 @@
       <div class="container">
         <span style="color: rgb(43, 207, 152); font-size: x-large"
           >Time Sheet</span
-        ><span style="font-size: x-large">{{
-          ProjectDetail.selectSupervisor
+        ><span class="ms-3" style="font-size: x-large">{{
+          ProjectDetail.selectSupervisor.firstName
+        }} {{
+          ProjectDetail.selectSupervisor.lastName
         }}</span>
         <nav class="navbar" style="background-color: #ffffff">
           <div class="container-fluid">

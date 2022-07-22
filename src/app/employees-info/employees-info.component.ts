@@ -11,8 +11,6 @@ export class EmployeesInfoComponent implements OnInit {
 
   getEmployeeDetail:any;
   users:any;
-  p: number = 1;
-  total : number = 0;
 
   constructor(private route: ActivatedRoute,private employeeService:EmployeeDetailService, private router:Router) { }
 
@@ -30,9 +28,9 @@ export class EmployeesInfoComponent implements OnInit {
   //   }) 
   // }
 
-  pageChangeEvent(event:number){
-    this.p = event;
-    this.getEmployeeDetail();
+  onClick(id:any){
+    this.router.navigate(['profile/' + id])
   }
+  
 }
 

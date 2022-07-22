@@ -16,7 +16,7 @@ export class EmployeeDetailService {
   }
 
   getEmployeeDetail() {
-    return this.httpClient.get(this.url + '/');
+    return this.httpClient.get(this.url + '/employee');
   }
 
   createEmployee(data: any, projectId: string) {

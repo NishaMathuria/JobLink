@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'profile/:id', component: EmployeeProfileComponent },
   { path: 'add-member/:id', component: AddTeamMemberPageComponent },
   { path: 'employee-detail/:id', component: EmployeeDetailComponent },
-  { path: 'employees', component: EmployeesInfoComponent },
+  { path: 'employeeinfo', component: EmployeesInfoComponent },
   { path: 'project-detail/:id', component: ProjectDetailComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

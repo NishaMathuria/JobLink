@@ -107,28 +107,28 @@
           <!-- to delete the project -->
           <div class="col">
             <ng-template #content let-modal>
-              <div class="modal-header">
+              <div class="d-flex justify-content-end m-3">
                 <button
                   type="button"
-                  class="btn-close"
+                  class="btn btn-close"
                   aria-label="Close"
                   (click)="modal.dismiss('Cross click')"
                 ></button>
-              </div>
-              <div class="modal-body m-5">
+                </div>
+                <div class="modal-body text-center">
                 <p>Are you sure you want to close this project?</p>
                 <p>you might be changed with a penalty fee</p>
-              </div>
-              <div class="modal-footer justify-content-center">
                 <button
-                  style="border-radius: 50px"
+                  style="border-radius: 50px; background-image: linear-gradient(to left, #21ce99, #1af5b2);"
                   type="button"
-                  class="btn btn-success"
+                  class="btn btn-success my-3 border-0"
                   (click)="modal.close('Save click')"
                 >
                   Confirm & Proceed
                 </button>
               </div>
+              <!-- <div class="modal-footer justify-content-center"> -->
+              <!-- </div> -->
             </ng-template>
             <button
               style="
@@ -141,6 +141,7 @@
               Close Project
             </button>
           </div>
+          
           <div class="col">
             <!-- not for implementation -->
             <button
@@ -175,7 +176,7 @@
       <tbody>
         <tr
           *ngFor="let employee of ProjectDetail.addUser"
-          (click)="onClick(employee._id)"
+          (click)="onClick(ProjectDetail._id)"
           style="cursor: pointer"
         >
           <td>{{ employee.firstName }} {{ employee.lastName }}</td>

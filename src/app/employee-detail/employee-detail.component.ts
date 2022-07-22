@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { response } from 'express';
 import { EmployeeDetailService } from '../services/employee-detail.service';
 import { ProjectDetailService } from '../services/project-detail.service';
@@ -13,15 +13,15 @@ import { ProjectDetailService } from '../services/project-detail.service';
 export class EmployeeDetailComponent implements OnInit {
 
   show=true;
-  show1=true;
-  show2=true;
+  show1=false;
+  show2=false;
   employeeDetail: any;
   ProjectDetail: any;
   
-  constructor(private myservice: EmployeeDetailService, private myProjectService: ProjectDetailService, private router: ActivatedRoute) { }
+  constructor(private myservice: EmployeeDetailService, private myProjectService: ProjectDetailService, private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
-    this.router.params.subscribe((params: any)=>{     
+    this.route.params.subscribe((params: any)=>{     
       this.myProjectService.getProjectById(params.id).subscribe((response: any) => {
         this.ProjectDetail = response.project;
         console.log(this.ProjectDetail);
@@ -35,11 +35,21 @@ export class EmployeeDetailComponent implements OnInit {
 
   showSheet(){
     this.show=!this.show;
+    this.show1=false;
+    this.show2=false;
   }
   showSheet1(){
     this.show1=!this.show1;
+    this.show=false;
+    this.show2=false;
   }
   showSheet2(){
     this.show2=!this.show2;
+    this.show1=false;
+    this.show=false;
+  }
+
+  onClick(id:any){
+    this.router.navigate(['profile/' +id])
   }
 }
