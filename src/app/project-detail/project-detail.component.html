@@ -15,26 +15,32 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <!-- on-going -->
         <li class="nav-item">
-          <a
-            style="color: rgb(43, 207, 152); font-size: 18px; margin-right:45px"
-            class="nav-link active"
+          <span
+            style="font-size: 18px; margin-right: 45px;color: rgb(43, 207, 152);"
+            [ngClass]="{ activeColor: ProjectDetail.status == 0 }"
+            class="nav-link"
             aria-current="page"
-            href="#"
-            >On-Going</a
+            >On-Going</span
           >
         </li>
 
         <!-- past -->
         <li class="nav-item">
-          <a style="color: rgb(115, 115, 115); font-size: 18px; margin-right:45px" class="nav-link" href="#"
-            >Past</a
+          <span
+            style="font-size: 18px; margin-right: 45px;  color: rgb(84, 84, 84);"
+            [ngClass]="{ activeColor: ProjectDetail.status == 1 }"
+            class="nav-link"
+            >Past</span
           >
         </li>
 
         <!-- upcoming -->
         <li class="nav-item">
-          <a style="color: rgb(115, 115, 115);font-size: 18px;" class="nav-link" href="#"
-            >Upcoming</a
+          <span
+            style="font-size: 18px; color: rgb(84, 84, 84);"
+            class="nav-link"
+            [ngClass]="{ activeColor: ProjectDetail.status == 2 }"
+            >Upcoming</span
           >
         </li>
       </ul>
@@ -49,157 +55,152 @@
   </div>
 </nav>
 
-
 <!-- <div class="card border-0"> -->
-  <div class="container mt-3">
-    <div class="card">
-      <div class="card-body" *ngIf="ProjectDetail">
-        <h5 class="card-title">{{ ProjectDetail.projectTitle }}</h5>
-        <span>Supervisor: </span
-        ><span class="text-muted"
-          >{{ ProjectDetail.selectSupervisor.firstName }}
-          {{ ProjectDetail.selectSupervisor.lastName }}</span
-        >
-        <p>{{ ProjectDetail.projectLocation }}</p>
-        <div class="row align-items-center">
-          <div class="col">
-            <span>Project Period: </span
-            ><span class="text-muted">
-              {{ ProjectDetail.startDate | date: "dd/MM/yyyy" }} -
-              {{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}
-            </span>
-          </div>
-          <div class="col">
-            <span>Number of People Added:</span
-            ><span class="text-muted">{{ ProjectDetail.expectedMember }}</span>
-          </div>
-          <div class="col">
-            <span>Amount in Escrow Account: </span
-            ><span class="text-muted">#30000</span>
-          </div>
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-body" *ngIf="ProjectDetail">
+      <h5 class="card-title">{{ ProjectDetail.projectTitle }}</h5>
+      <span>Supervisor: </span
+      ><span class="text-muted"
+        >{{ ProjectDetail.selectSupervisor.firstName }}
+        {{ ProjectDetail.selectSupervisor.lastName }}</span
+      >
+      <p>{{ ProjectDetail.projectLocation }}</p>
+      <div class="row align-items-center">
+        <div class="col">
+          <span>Project Period: </span
+          ><span class="text-muted">
+            {{ ProjectDetail.startDate | date: "dd/MM/yyyy" }} -
+            {{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}
+          </span>
         </div>
-        <br />
-        <!-- buttons -->
-        <div class="row align-items-center">
-          <div class="col">
-            <!-- not for implementation -->
-            <button
-              style="
-                color: rgb(39, 190, 140);
-                background-color: rgb(243, 243, 243);
-              "
-              type="button"
-              class="btn btn-light disabled"
-            >
-              Top Up Account
-            </button>
-          </div>
+        <div class="col">
+          <span>Number of People Added:</span
+          ><span class="text-muted">{{ ProjectDetail.expectedMember }}</span>
+        </div>
+        <div class="col">
+          <span>Amount in Escrow Account: </span
+          ><span class="text-muted">#30000</span>
+        </div>
+      </div>
+      <br />
+      <!-- buttons -->
+      <div class="row align-items-center">
+        <div class="col">
+          <!-- not for implementation -->
+          <button
+            style="
+              color: rgb(39, 190, 140);
+              background-color: rgb(243, 243, 243);
+            "
+            type="button"
+            class="btn btn-light disabled"
+          >
+            Top Up Account
+          </button>
+        </div>
 
-          <!-- for add the team member -->
-          <div class="col">
-            <button
-              style="
-                color: rgb(39, 190, 140);
-                background-color: rgb(243, 243, 243);
-              "
-              class="btn btn-light"
-              routerLink="/add-member/{{ ProjectDetail._id }}"
-              role="button"
-            >
-              Add Member
-            </button>
-          </div>
+        <!-- for add the team member -->
+        <div class="col">
+          <button
+            style="
+              color: rgb(39, 190, 140);
+              background-color: rgb(243, 243, 243);
+            "
+            class="btn btn-light"
+            routerLink="/add-member/{{ ProjectDetail._id }}"
+            role="button"
+          >
+            Add Member
+          </button>
+        </div>
 
-          <!-- to delete the project -->
-          <div class="col">
-            <ng-template #content let-modal>
-              <div class="d-flex justify-content-end m-3">
-                <button
-                  type="button"
-                  class="btn btn-close"
-                  aria-label="Close"
-                  (click)="modal.dismiss('Cross click')"
-                ></button>
-              </div>
-              <div class="modal-body text-center">
-                <p>Are you sure you want to close this project?</p>
-                <p>you might be changed with a penalty fee</p>
-                <button
-                  style="
-                    border-radius: 50px;
-                    background-image: linear-gradient(
-                      to left,
-                      #21ce99,
-                      #1af5b2
-                    );
-                  "
-                  type="button"
-                  class="btn btn-success my-3 border-0"
-                  (click)="modal.close('Save click')"
-                >
-                  Confirm & Proceed
-                </button>
-              </div>
-              <!-- <div class="modal-footer justify-content-center"> -->
-              <!-- </div> -->
-            </ng-template>
-            <button
-              style="
-                color: rgb(39, 190, 140);
-                background-color: rgb(243, 243, 243);
-              "
-              class="btn btn-light"
-              (click)="open(content)"
-            >
-              Close Project
-            </button>
-          </div>
+        <!-- to delete the project -->
+        <div class="col">
+          <ng-template #content let-modal>
+            <div class="d-flex justify-content-end m-3">
+              <button
+                type="button"
+                class="btn btn-close"
+                aria-label="Close"
+                (click)="modal.close('Close')"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <p>Are you sure you want to close this project?</p>
+              <p>you might be changed with a penalty fee</p>
+              <button
+                style="
+                  border-radius: 50px;
+                  background-image: linear-gradient(to left, #21ce99, #1af5b2);
+                "
+                type="button"
+                class="btn btn-success my-3 border-0"
+                (click)="modal.close('Save')"
+              >
+                Confirm & Proceed
+              </button>
+            </div>
+            <!-- <div class="modal-footer justify-content-center"> -->
+            <!-- </div> -->
+          </ng-template>
+          <button
+            style="
+              color: rgb(39, 190, 140);
+              background-color: rgb(243, 243, 243);
+            "
+            class="btn btn-light"
+            (click)="open(content)"
+          >
+            Close Project
+          </button>
+        </div>
 
-          <div class="col">
-            <!-- not for implementation -->
-            <button
-              style="
-                color: rgb(39, 190, 140);
-                background-color: rgb(243, 243, 243);
-              "
-              type="button"
-              class="btn btn-light disabled"
-            >
-              Edit Project
-            </button>
-          </div>
+        <div class="col">
+          <!-- not for implementation -->
+          <button
+            style="
+              color: rgb(39, 190, 140);
+              background-color: rgb(243, 243, 243);
+            "
+            type="button"
+            class="btn btn-light disabled"
+          >
+            Edit Project
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <br />
-  <!-- table details  -->
-  <div class="container">
-    <table class="table table-bordered bg-white">
-      <thead class="table-light">
-        <tr>
-          <th scope="col">Member Name</th>
-          <th scope="col">Phone Number</th>
-          <th scope="col">Email Address</th>
-          <th scope="col">Daily Wages</th>
-          <th scope="col">Contact Start Date</th>
-          <th scope="col">Contact End Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          *ngFor="let employee of ProjectDetail.addUser"
-          (click)="onClick(ProjectDetail._id)"
-          style="cursor: pointer"
-        >
-          <td>{{ employee.firstName }} {{ employee.lastName }}</td>
-          <td>{{ employee.phoneNumber }}</td>
-          <td>{{ employee.email }}</td>
-          <td>300 N</td>
-          <td>{{ ProjectDetail.startDate | date: "dd/MM/yyyy" }}</td>
-          <td>{{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+</div>
+<br />
+<!-- table details  -->
+<div class="container">
+  <table class="table table-bordered bg-white">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Member Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Daily Wages</th>
+        <th scope="col">Contact Start Date</th>
+        <th scope="col">Contact End Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let employee of ProjectDetail.addUser"
+        (click)="onClick(ProjectDetail._id)"
+        style="cursor: pointer"
+      >
+        <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+        <td>{{ employee.phoneNumber }}</td>
+        <td>{{ employee.email }}</td>
+        <td>300 N</td>
+        <td>{{ ProjectDetail.startDate | date: "dd/MM/yyyy" }}</td>
+        <td>{{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <!-- </div> -->

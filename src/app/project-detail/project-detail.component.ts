@@ -15,7 +15,6 @@ import { ProjectDetailService } from '../services/project-detail.service';
   styleUrls: ['./project-detail.component.css'],
 })
 export class ProjectDetailComponent implements OnInit {
-  closeResult: string | undefined;
   ProjectDetail: any;
 
   constructor(
@@ -30,15 +29,20 @@ export class ProjectDetailComponent implements OnInit {
       .open(content, { ariaLabelledBy: 'modal-basic-title' })
       .result.then(
         (result) => {
-          this.closeResult = `Closed with: ${result}`;
+          if (result == 'Save') {
+            this.route.params.subscribe((params: any) => {
+              this.projectService
+                .updateProjectById(params.id, { status: 1 })
+                .subscribe((response: any) => {
+                  console.log(response);
+                });
+            });
+          }
         },
         (reason) => {
-          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+          console.log(reason);
         }
       );
-  }
-  getDismissReason(reason: any) {
-    throw new Error('Method not implemented.');
   }
 
   ngOnInit(): void {

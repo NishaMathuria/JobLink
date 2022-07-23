@@ -13,6 +13,7 @@ export class AddTeamMemberPageComponent implements OnInit {
   files: any;
   employee: any;
   projectId!: string;
+  invalidSize: boolean = false;
 
   createForm!: FormGroup;
   warning: boolean | undefined;
@@ -60,5 +61,18 @@ export class AddTeamMemberPageComponent implements OnInit {
         this.createForm.reset();
         this.router.navigate(['/employeeinfo']);
       });
+  }
+
+  onChange() {
+    const element = document.getElementById('fileSelector') as HTMLInputElement;
+    const files = element.files as FileList;
+    if (
+      Math.round(files[0].size / 1024) >= 4096 &&
+      files[0].type != 'application/pdf'
+    ) {
+      this.createForm.patchValue({
+        docFile: '',
+      });
+    }
   }
 }

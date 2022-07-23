@@ -8,10 +8,11 @@ import { ProjectDetailService } from '../services/project-detail.service';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
-  getProjectDetail: any;
   users: any;
   p: number = 1;
   total: number = 0;
+  projects: any;
+  statusColor: Number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,9 +20,8 @@ export class HomePageComponent implements OnInit {
     private router: Router
   ) {}
 
-  projects: any;
   ngOnInit(): void {
-    this.projectService.getProjectDetail().subscribe((data: any) => {
+    this.projectService.getProjectDetail(0).subscribe((data: any) => {
       console.log(data);
       this.projects = data.projects;
     });
@@ -32,6 +32,12 @@ export class HomePageComponent implements OnInit {
 
   pageChangeEvent(event: number) {
     this.p = event;
-    this.getProjectDetail();
+  }
+  onClickItem(status: Number) {
+    this.statusColor = status;
+    this.projectService.getProjectDetail(status).subscribe((data: any) => {
+      console.log(data);
+      this.projects = data.projects;
+    });
   }
 }

@@ -8,8 +8,8 @@ export class ProjectDetailService {
   private url = 'http://localhost:4000/api';
   constructor(private httpClient: HttpClient) {}
 
-  getProjectDetail() {
-    return this.httpClient.get(this.url + '/project?page=');
+  getProjectDetail(status: any) {
+    return this.httpClient.get(this.url + '/project?status=' + status);
   }
 
   createProject(data: any) {
@@ -18,5 +18,8 @@ export class ProjectDetailService {
 
   getProjectById(id: any) {
     return this.httpClient.get(this.url + '/project/' + id);
+  }
+  updateProjectById(id: any, data: any) {
+    return this.httpClient.patch(this.url + '/project/' + id, data);
   }
 }
