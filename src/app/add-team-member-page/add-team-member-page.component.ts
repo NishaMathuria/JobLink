@@ -61,6 +61,4 @@ export class AddTeamMemberPageComponent implements OnInit {
         this.router.navigate(['/employeeinfo']);
       });
   }
-
-  
 }

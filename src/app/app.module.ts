@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EmployeesInfoComponent } from './employees-info/employees-info.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EmployeesInfoComponent } from './employees-info/employees-info.componen
     EmployeeDetailComponent,
     AddTeamMemberPageComponent,
     HeaderComponent,
-    EmployeesInfoComponent
+    EmployeesInfoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

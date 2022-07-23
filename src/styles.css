@@ -3,3 +3,8 @@
 input {
     border-radius: 50px;
 }
+
+body {
+    background-image: url('assets/images/layer.png');
+
+}

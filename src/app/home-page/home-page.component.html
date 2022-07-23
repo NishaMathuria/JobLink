@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand bg-light">
-  <div style="background-color: rgb(249, 249, 254)" class="container">
+<nav class="navbar navbar-expand m-3">
+  <div class="container">
     <button
       class="navbar-toggler"
       type="button"
@@ -16,24 +16,24 @@
         <!-- on-going -->
         <li class="nav-item">
           <a
-            style="color: rgb(43, 207, 152)"
+            style="color: rgb(43, 207, 152); font-size: 18px; margin-right:45px"
             class="nav-link active"
             aria-current="page"
             href="#"
             >On-Going</a
           >
         </li>
-
+        
         <!-- past -->
         <li class="nav-item">
-          <a style="color: rgb(115, 115, 115)" class="nav-link" href="#"
+          <a style="color: rgb(115, 115, 115); margin-right:45px; font-size: 18px;" class="nav-link" href="#"
             >Past</a
           >
         </li>
 
         <!-- upcoming -->
         <li class="nav-item">
-          <a style="color: rgb(115, 115, 115)" class="nav-link" href="#"
+          <a style="color: rgb(115, 115, 115); font-size: 18px;" class="nav-link" href="#"
             >Upcoming</a
           >
         </li>
@@ -50,13 +50,11 @@
 </nav>
 
 <div class="container">
-  <div style="background-color: rgb(249, 249, 254)" class="card border-0">
-    <div class="container p-3">
       <div
         class="card mb-3"
         *ngFor="
           let project of projects
-            | paginate: { itemsPerPage: 3, currentPage: p, totalItems: total }
+            | paginate: { itemsPerPage: 5, currentPage: p, totalItems: total }
         "
       >
         <div
@@ -87,7 +85,7 @@
           </div>
         </div>
       </div>
-     <br />
+      <br />
     </div>
 
     <!-- pagination -->
@@ -101,5 +99,3 @@
         </ul>
       </nav>
     </div>
-  </div>
-</div>

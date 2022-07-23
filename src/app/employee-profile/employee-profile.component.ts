@@ -5,21 +5,24 @@ import { EmployeeDetailService } from '../services/employee-detail.service';
 @Component({
   selector: 'app-employee-profile',
   templateUrl: './employee-profile.component.html',
-  styleUrls: ['./employee-profile.component.css']
+  styleUrls: ['./employee-profile.component.css'],
 })
 export class EmployeeProfileComponent implements OnInit {
-
-  
   EmployeeDetail: any;
 
-  constructor(private employeeService: EmployeeDetailService, private route: ActivatedRoute) { }
+  constructor(
+    private employeeService: EmployeeDetailService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: any)=>{     
-      this.employeeService.getEmployeeById(params.id).subscribe((response: any) => {
-        this.EmployeeDetail = response.employee;
-        console.log(this.EmployeeDetail);
-      })
-    })
+    this.route.params.subscribe((params: any) => {
+      this.employeeService
+        .getEmployeeById(params.id)
+        .subscribe((response: any) => {
+          this.EmployeeDetail = response.employee;
+          console.log(this.EmployeeDetail);
+        });
+    });
   }
 }
