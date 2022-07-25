@@ -1,7 +1,10 @@
-<div class="container" style="height: 175vh;margin-bottom: 20px;">
+<div class="container" style="height: 175vh; margin-bottom: 20px; width: 75%">
   <div class="container p-5">
     <div class="card">
-      <div class="card-header">Add Team Member</div>
+      <span class="ms-2 mt-3" style="margin-left: 2% !important"
+        >Add Team Member</span
+      >
+      <hr style="width: 1150px; margin-left: 20px; margin-right: 20px" />
       <div class="card-body">
         <form [formGroup]="createForm" (ngSubmit)="onSave()">
           <div class="row g-3">
@@ -142,8 +145,6 @@
                 formControlName="docFile"
                 value="upload"
               />
-              <!-- ng2FileSize="{min:1024,max: 1024 * 1024}",
-                    fileSizeErrorMsg="'File size must be less that 1mb and more that 1kb!'" -->
               <div
                 *ngIf="
                   createForm.get('docFile')?.invalid &&
@@ -157,7 +158,7 @@
             </div>
 
             <!-- Skill Set & Level -->
-            <div class="card p-2">
+            <div class="card p-2 mb-3">
               <h6>Skill Set & Level :</h6>
               <div class="card-body">
                 <div class="row">

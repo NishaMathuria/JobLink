@@ -1,0 +1,23 @@
+.table{
+    background-color: white;
+border:  none;
+}
+.tables{
+    border: transparent;
+}
+
+table.table tbody tr td:first-child,
+table.table th:first-child{
+    border-left: none;
+}
+
+table.table tbody tr td:last-child,
+table.table th:last-child{
+    border-right: none;
+}
+
+table.table tbody tr td,
+table.table th{
+    border-left: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
+}

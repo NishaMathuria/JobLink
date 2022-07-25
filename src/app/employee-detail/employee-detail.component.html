@@ -1,272 +1,345 @@
 <!-- navbar -->
 <nav class="navbar navbar-expand m-3">
   <div class="container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a style="color: rgb(43, 207, 152);font-size: 19px; margin-right: 50px;" class="nav-link active" aria-current="page" href="#">On-Going</a>
+          <a
+            style="
+              color: rgb(43, 207, 152);
+              font-size: 19px;
+              margin-right: 50px;
+            "
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            >On-Going</a
+          >
         </li>
         <li class="nav-item">
-          <a style="color: rgb(115, 115, 115);font-size: 19px; margin-right: 50px;" class="nav-link" href="#">Past</a>
+          <a
+            style="
+              color: rgb(115, 115, 115);
+              font-size: 19px;
+              margin-right: 50px;
+            "
+            class="nav-link"
+            href="#"
+            >Past</a
+          >
         </li>
         <li class="nav-item">
-          <a style="color: rgb(115, 115, 115);font-size: 19px;" class="nav-link" href="#">Upcoming</a>
+          <a
+            style="color: rgb(115, 115, 115); font-size: 19px"
+            class="nav-link"
+            href="#"
+            >Upcoming</a
+          >
         </li>
       </ul>
-      <a style="background-color: rgb(236, 253, 248); color: rgb(43, 207, 152)" class="btn btn-outline-success"
-        href="create-project" role="button">Create New Project</a>
+      <a
+        style="background-color: rgb(236, 253, 248); color: rgb(43, 207, 152)"
+        class="btn btn-outline-success"
+        href="create-project"
+        role="button"
+        >Create New Project</a
+      >
     </div>
   </div>
 </nav>
 
-<div class="container" style="height: 93vh; margin-bottom: 70px;">
-      <div class="card-body">
-        <div class="card">
-          <div class="card-body" *ngIf="ProjectDetail">
-            <h5 class="card-title">{{ ProjectDetail.projectTitle }}</h5>
-            <span>Supervisor: </span><span class="text-muted">{{ ProjectDetail.selectSupervisor.firstName }}
-              {{ ProjectDetail.selectSupervisor.lastName }}</span>
-            <p>{{ ProjectDetail.projectLocation }}</p>
+<div class="container" style="height: 93vh; margin-bottom: 70px">
+  <div class="card-body">
+    <div class="card">
+      <div class="card-body" *ngIf="ProjectDetail">
+        <h5 class="card-title">{{ ProjectDetail.projectTitle }}</h5>
+        <span>Supervisor: </span>&nbsp;
+        <span class="text-muted"
+          >{{ ProjectDetail.selectSupervisor.firstName }}
+          {{ ProjectDetail.selectSupervisor.lastName }}</span
+        >
+        <p>{{ ProjectDetail.projectLocation }}</p>
 
-            <div class="row align-items-center" style="background-color:rgb(251, 250, 250); height: 50px;" >
-              <div class="col d-flex justify-content-center">
-                <span>Project Period:</span><span class="text-muted">{{ ProjectDetail.startDate | date: "dd/MM/yyyy" }}
-                  -
-                  {{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}</span>
-              </div>
-              <div class="col d-flex justify-content-center">
-                <span>Number of People Added:</span><span class="text-muted">{{
-                  ProjectDetail.expectedMember
-                  }}</span>
-              </div>
-              <div class="col d-flex justify-content-center">
-                <button style="
-                    color: rgb(43, 207, 152);
-                    background-color:rgb(233, 233, 233);
-                  " class="btn btn-light" (click)="onClick(ProjectDetail.selectSupervisor._id)" role="button">
-                  View Profile
-                </button>
-              </div>
-            </div>
+        <div
+          class="row align-items-center"
+          style="
+            background-color: rgb(251, 250, 250);
+            height: 50px;
+            width: 100%;
+            margin-left: 2px;
+          "
+        >
+          <div class="col d-flex justify-content-center">
+            <span>Project Period:</span>&nbsp;&nbsp;
+            <span class="text-muted"
+              >{{ ProjectDetail.startDate | date: "dd/MM/yyyy" }}
+              -
+              {{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}</span
+            >
           </div>
-        </div>
-      </div>
-      <br>
-      <div class="container">
-        <span style="color: rgb(43, 207, 152); font-size: x-large">Time Sheet</span><span class="ms-2 text-muted"
-          style="font-size: large">({{ ProjectDetail.selectSupervisor.firstName }}
-          {{ ProjectDetail.selectSupervisor.lastName }})</span>
-          <br>
-          <br>
-        <nav class="navbar" style="background-color: #ffffff">
-          <div class="container-fluid">
-            <p class="navbar-brand">Week 1</p>
-            <div>
-              <button class="mx-2"><i class="bi bi-download"></i></button>
-              <button class="mx-2" (click)="showSheet()" *ngIf="show">
-                <i class="bi bi-caret-up-fill"></i>
-              </button>
-              <button class="mx-2" (click)="showSheet()" *ngIf="!show">
-                <i class="bi bi-caret-down-fill"></i>
-              </button>
-            </div>
+          <div class="col d-flex justify-content-center">
+            <span>Number of People Added:</span>&nbsp; &nbsp;
+            <span class="text-muted">{{ ProjectDetail.expectedMember }}</span>
           </div>
-        </nav>
-      </div>
-
-      <div class="container p-3" *ngIf="show">
-        <div class="card">
-          <!-- <div class="card-body"> -->
-            <table class="table table-bordered" style="border:solid white">
-              <thead class="table-light">
-                <tr>
-                  <th scope="col" class="text-center" style="background-color: white;">Day</th>
-                  <th scope="col" class="text-center" style="background-color: white;">Date</th>
-                  <th scope="col" class="text-center" style="background-color: white;">Attendance</th>
-                </tr>
-              </thead>
-              <tbody class="week1 text-muted">
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Monday</td>
-                  <td class="text-center">19th March 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Tuesday</td>
-                  <td class="text-center">20th March 2020</td>
-                  <td class="text-center">present</td>
-                </tr>
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Wednesday</td>
-                  <td class="text-center">21th March 2020</td>
-                  <td class="text-center">present</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Thursday</td>
-                  <td class="text-center">22th March 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Friday</td>
-                  <td class="text-center">23rd March 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Saturday</td>
-                  <td class="text-center">24th March 2020</td>
-                  <td class="text-center">present</td>
-                </tr>
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Sunday</td>
-                  <td class="text-center">25th March 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-              </tbody>
-            </table>
-            </div>
-        <!-- </div> -->
-      </div>
-      <br />
-      <div class="container">
-        <nav class="navbar" style="background-color: #ffffff">
-          <div class="container-fluid">
-            <p class="navbar-brand">Week 2</p>
-            <div>
-              <button class="mx-2"><i class="bi bi-download"></i></button>
-              <button class="mx-2" (click)="showSheet1()" *ngIf="show1">
-                <i class="bi bi-caret-up-fill"></i>
-              </button>
-              <button class="mx-2" (click)="showSheet1()" *ngIf="!show1">
-                <i class="bi bi-caret-down-fill"></i>
-              </button>
-            </div>
+          <div class="col d-flex justify-content-center">
+            <button
+              style="
+                color: rgb(43, 207, 152);
+                background-color: rgb(233, 233, 233);
+              "
+              class="btn btn-light"
+              (click)="onClick(ProjectDetail.selectSupervisor._id)"
+              role="button"
+            >
+              View Profile
+            </button>
           </div>
-        </nav>
-      </div>
-      <br />
-
-      <div class="container p-3" *ngIf="show1">
-        <div class="card">
-          <!-- <div class="card-body"> -->
-            <table class="table table-bordered" style="border:solid white">
-              <thead class="table-light">
-                <tr>
-                  <th scope="col" class="text-center" style="background-color: white;">Day</th>
-                  <th scope="col" class="text-center" style="background-color: white;">Date</th>
-                  <th scope="col" class="text-center" style="background-color: white;">Attendance</th>
-                </tr>
-              </thead>
-              <tbody class="week1 text-muted">
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Monday</td>
-                  <td class="text-center">10th April 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Tuesday</td>
-                  <td class="text-center">11th April 2020</td>
-                  <td class="text-center">present</td>
-                </tr>
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Wednesday</td>
-                  <td class="text-center">12th April 2020</td>
-                  <td class="text-center">present</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Thursday</td>
-                  <td class="text-center">13th April 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Friday</td>
-                  <td class="text-center">14th April 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Saturday</td>
-                  <td class="text-center">15th April 2020</td>
-                  <td class="text-center">present</td>
-                </tr>
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Sunday</td>
-                  <td class="text-center">16th April 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-              </tbody>
-            </table>
-          <!-- </div> -->
-        </div>
-      </div>
-      <div class="container mb-5">
-        <nav class="navbar" style="background-color: #ffffff">
-          <div class="container-fluid">
-            <p class="navbar-brand">Week 3</p>
-            <div>
-              <button class="mx-2"><i class="bi bi-download"></i></button>
-              <button class="mx-2" (click)="showSheet2()" *ngIf="show2">
-                <i class="bi bi-caret-up-fill"></i>
-              </button>
-              <button class="mx-2" (click)="showSheet2()" *ngIf="!show2">
-                <i class="bi bi-caret-down-fill"></i>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <div class="container p-3" *ngIf="show2">
-        <div class="card">
-          <!-- <div class="card-body"> -->
-            <table class="table table-bordered" style="border:solid white">
-              <thead class="table-light">
-                <tr>
-                  <th scope="col" class="text-center" style="background-color: white;">Day</th>
-                  <th scope="col" class="text-center" style="background-color: white;">Date</th>
-                  <th scope="col" class="text-center" style="background-color: white;">Attendance</th>
-                </tr>
-              </thead>
-              <tbody class="week1 text-muted">
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Monday</td>
-                  <td class="text-center">1st May 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Tuesday</td>
-                  <td class="text-center">2nd May 2020</td>
-                  <td class="text-center">present</td>
-                </tr>
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Wednesday</td>
-                  <td class="text-center">3rd May 2020</td>
-                  <td class="text-center">present</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Thursday</td>
-                  <td class="text-center">4th May 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Friday</td>
-                  <td class="text-center">5th May 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Saturday</td>
-                  <td class="text-center">6th May 2020</td>
-                  <td class="text-center">present</td>
-                </tr>
-                <tr style="background-color: rgb(252, 251, 251);">
-                  <td class="text-center">Sunday</td>
-                  <td class="text-center">7th May 2020</td>
-                  <td class="text-center">Absent</td>
-                </tr>
-              </tbody>
-            </table>
         </div>
       </div>
     </div>
-  
+  </div>
+  <br />
+  <div class="container">
+    <span style="color: rgb(43, 207, 152); font-size: x-large">Time Sheet</span
+    ><span class="ms-2 text-muted" style="font-size: large"
+      >({{ ProjectDetail.selectSupervisor.firstName }}
+      {{ ProjectDetail.selectSupervisor.lastName }})</span
+    >
+    <br />
+    <br />
+    <nav class="navbar" style="background-color: #ffffff">
+      <div class="container-fluid">
+        <p class="navbar-brand">Week 1</p>
+        <div>
+          <button class="mx-2"><i class="bi bi-download"></i></button>
+          <button class="mx-2" (click)="showSheet()" *ngIf="show">
+            <i class="bi bi-caret-up-fill"></i>
+          </button>
+          <button class="mx-2" (click)="showSheet()" *ngIf="!show">
+            <i class="bi bi-caret-down-fill"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container p-3" *ngIf="show">
+    <div class="card">
+      <!-- <div class="card-body"> -->
+      <table class="table table-bordered" style="border: solid white">
+        <thead class="table-light">
+          <tr>
+            <th scope="col" class="text-center" style="background-color: white">
+              Day
+            </th>
+            <th scope="col" class="text-center" style="background-color: white">
+              Date
+            </th>
+            <th scope="col" class="text-center" style="background-color: white">
+              Attendance
+            </th>
+          </tr>
+        </thead>
+        <tbody class="week1 text-muted">
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Monday</td>
+            <td class="text-center">19th March 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+          <tr>
+            <td class="text-center">Tuesday</td>
+            <td class="text-center">20th March 2020</td>
+            <td class="text-center">present</td>
+          </tr>
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Wednesday</td>
+            <td class="text-center">21th March 2020</td>
+            <td class="text-center">present</td>
+          </tr>
+          <tr>
+            <td class="text-center">Thursday</td>
+            <td class="text-center">22th March 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Friday</td>
+            <td class="text-center">23rd March 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+          <tr>
+            <td class="text-center">Saturday</td>
+            <td class="text-center">24th March 2020</td>
+            <td class="text-center">present</td>
+          </tr>
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Sunday</td>
+            <td class="text-center">25th March 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- </div> -->
+  </div>
+  <br />
+  <div class="container">
+    <nav class="navbar" style="background-color: #ffffff">
+      <div class="container-fluid">
+        <p class="navbar-brand">Week 2</p>
+        <div>
+          <button class="mx-2"><i class="bi bi-download"></i></button>
+          <button class="mx-2" (click)="showSheet1()" *ngIf="show1">
+            <i class="bi bi-caret-up-fill"></i>
+          </button>
+          <button class="mx-2" (click)="showSheet1()" *ngIf="!show1">
+            <i class="bi bi-caret-down-fill"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <br />
+
+  <div class="container p-3" *ngIf="show1">
+    <div class="card">
+      <!-- <div class="card-body"> -->
+      <table class="table table-bordered" style="border: solid white">
+        <thead class="table-light">
+          <tr>
+            <th scope="col" class="text-center" style="background-color: white">
+              Day
+            </th>
+            <th scope="col" class="text-center" style="background-color: white">
+              Date
+            </th>
+            <th scope="col" class="text-center" style="background-color: white">
+              Attendance
+            </th>
+          </tr>
+        </thead>
+        <tbody class="week1 text-muted">
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Monday</td>
+            <td class="text-center">10th April 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+          <tr>
+            <td class="text-center">Tuesday</td>
+            <td class="text-center">11th April 2020</td>
+            <td class="text-center">present</td>
+          </tr>
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Wednesday</td>
+            <td class="text-center">12th April 2020</td>
+            <td class="text-center">present</td>
+          </tr>
+          <tr>
+            <td class="text-center">Thursday</td>
+            <td class="text-center">13th April 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Friday</td>
+            <td class="text-center">14th April 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+          <tr>
+            <td class="text-center">Saturday</td>
+            <td class="text-center">15th April 2020</td>
+            <td class="text-center">present</td>
+          </tr>
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Sunday</td>
+            <td class="text-center">16th April 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- </div> -->
+    </div>
+  </div>
+  <div class="container mb-5">
+    <nav class="navbar" style="background-color: #ffffff">
+      <div class="container-fluid">
+        <p class="navbar-brand">Week 3</p>
+        <div>
+          <button class="mx-2"><i class="bi bi-download"></i></button>
+          <button class="mx-2" (click)="showSheet2()" *ngIf="show2">
+            <i class="bi bi-caret-up-fill"></i>
+          </button>
+          <button class="mx-2" (click)="showSheet2()" *ngIf="!show2">
+            <i class="bi bi-caret-down-fill"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container p-3" *ngIf="show2">
+    <div class="card">
+      <!-- <div class="card-body"> -->
+      <table class="table table-bordered" style="border: solid white">
+        <thead class="table-light">
+          <tr>
+            <th scope="col" class="text-center" style="background-color: white">
+              Day
+            </th>
+            <th scope="col" class="text-center" style="background-color: white">
+              Date
+            </th>
+            <th scope="col" class="text-center" style="background-color: white">
+              Attendance
+            </th>
+          </tr>
+        </thead>
+        <tbody class="week1 text-muted">
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Monday</td>
+            <td class="text-center">1st May 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+          <tr>
+            <td class="text-center">Tuesday</td>
+            <td class="text-center">2nd May 2020</td>
+            <td class="text-center">present</td>
+          </tr>
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Wednesday</td>
+            <td class="text-center">3rd May 2020</td>
+            <td class="text-center">present</td>
+          </tr>
+          <tr>
+            <td class="text-center">Thursday</td>
+            <td class="text-center">4th May 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Friday</td>
+            <td class="text-center">5th May 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+          <tr>
+            <td class="text-center">Saturday</td>
+            <td class="text-center">6th May 2020</td>
+            <td class="text-center">present</td>
+          </tr>
+          <tr style="background-color: rgb(252, 251, 251)">
+            <td class="text-center">Sunday</td>
+            <td class="text-center">7th May 2020</td>
+            <td class="text-center">Absent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

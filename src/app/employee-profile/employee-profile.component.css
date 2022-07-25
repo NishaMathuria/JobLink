@@ -1,3 +1,11 @@
 .border-line {
     border-right: 1px solid #afb7bb;
+    line-height: 2;
   }
+
+  .rounded-circle {
+    background-color:#fff;
+    border:3px solid rgb(250, 246, 246);    
+    
+}
+

@@ -1,167 +1,261 @@
-<div class="container mb-5">
-      <div class=" header pb-8 pt-5 pt-lg-8 d-flex align-items-center">
-        <span class="mask bg-gradient-danger opacity-8"></span>
-      </div>
-      <div id="bg" class="container mt-7">
-        <div class="row">
-          <div class="col-xl-12 order-xl-1">
-            <div class="card bg-white shadow">
-              <div style="background-color: rgb(43, 207, 152)" class="row">
-                <!-- <h6>hello</h6> -->
-              </div>
-              <div class="card-header bg-white border-0">
-                <div class="row align-items-center">
-                  <div class="col-12 text-center">
-                    <div class="d-flex justify-content-center m-0">
-                      <div class="rounded-circle">
-                        <img src="assets/images/person icon.png" class="rounded-circle" height="200px" width="200px" />
-                      </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                      <h1>
-                        {{ EmployeeDetail.firstName }}
-                        {{ EmployeeDetail.lastName }}
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <button style="
-                          background-color: rgb(79, 79, 79);
-                          color: aliceblue;
-                          border-radius: 50px;
-                          height: 50px;
-                          width: 50px;
-                          font-size: 25px;
-                        ">
-                        <i class="bi bi-envelope"></i>
-                      </button>
-                      &nbsp;&nbsp;
-                      <span class="text-muted">Email : </span>
-                      <span>{{ EmployeeDetail.email }}</span>
-                    </div>
-                    <div class="col-sm-4">
-                      <button style="
-                          background-color: rgb(79, 79, 79);
-                          color: aliceblue;
-                          border-radius: 50px;
-                          height: 50px;
-                          width: 50px;
-                          font-size: 25px;
-                        ">
-                        <i class="bi bi-telephone"></i>
-                      </button>
-                      &nbsp;&nbsp;
-                      <span class="text-muted">Phone : </span>
-                      <span>{{ EmployeeDetail.phoneNumber }}</span>
-                    </div>
-                    <div class="col-sm-4">
-                      <button style="
-                          background-color: rgb(79, 79, 79);
-                          color: aliceblue;
-                          border-radius: 50px;
-                          height: 50px;
-                          width: 50px;
-                          font-size: 25px;
-                        ">
-                        <i class="bi bi-calendar-day"></i>
-                      </button>
-                      &nbsp;&nbsp; <span class="text-muted">Date of birth : </span>
-                      <span> 25 Sep 1999</span>
-                    </div>
-                  </div>
-                  <br />
-
-                  <div class="row pl-4">
-                    <div style="font-size: 16px" class="col-12 bg-light p-3">
-                      <i style="color: rgb(43, 207, 152)" class="bi bi-geo-alt">
-                      </i>&nbsp;
-                      <span class="text-muted">Address : </span>
-                      <span> House 181,building 12, Ahmedabad</span>
-                      <br>
-                      <br>
-                      <i style="color: rgb(43, 207, 152)" class="bi bi-coin">
-                      </i>&nbsp;
-                      <span class="text-muted">Daily wages :</span>
-                      <span> 300 N </span>
-                    </div>
+<div class="container mb-5 mt-2">
+  <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center">
+    <span class="mask bg-gradient-danger opacity-8"></span>
+  </div>
+  <div id="bg" class="container mt-7">
+    <div class="row">
+      <div class="col-xl-12 order-xl-1">
+        <div class="card bg-white shadow">
+          <div class="card bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-12 text-center">
+                <div
+                  class="d-flex justify-content-center"
+                  style="
+                    background: repeating-linear-gradient(
+                      #21ce99,
+                      #21ce99 60%,
+                      #ffffff 50%,
+                      #ffffff 100%
+                    );
+                  "
+                >
+                  <div class="rounded-circle mt-4">
+                    <img
+                      src="assets/images/person icon.png"
+                      class="rounded-circle"
+                      height="200px"
+                      width="200px"
+                    />
                   </div>
                 </div>
                 <br />
                 <div class="row">
-                  <div style="font-size: 18px" class="col-6 border-line">
-                    <div class="col-12 text-white p-3 fs-10" style="background-color:#949B9F">
-                      Educational Details & Skill Sets:
-                    </div>
-                    <div class="bg-light p-3">
-                      <div class="col-12 bg-light">
-                        <span class="text-muted">Most Recent Education Degree:</span>
-                        mining Engineer
-                      </div>
-                      <br>
+                  <h1>
+                    {{ EmployeeDetail.firstName }}
+                    {{ EmployeeDetail.lastName }}
+                  </h1>
+                </div>
+              </div>
+            </div>
 
-                      <div class="col-12">
-                        <p>Certificate</p>
-                        <img width="300" src="assets/images/certificate.webp" />
-                      </div>
-                    </div>
+            <div class="card-body" style="margin-left: 20px">
+              <div class="row">
+                <div class="col-sm-4 d-flex justify-content-center">
+                  <button
+                    style="
+                      background-color: rgb(79, 79, 79);
+                      color: aliceblue;
+                      border-radius: 50px;
+                      height: 50px;
+                      width: 50px;
+                      font-size: 25px;
+                    "
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </button>
+                  &nbsp;&nbsp;&nbsp;
+                  <span class="text-muted mt-2">Email : </span> &nbsp;&nbsp;
+                  <span class="email mt-2">{{ EmployeeDetail.email }}</span>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center">
+                  <button
+                    style="
+                      background-color: rgb(79, 79, 79);
+                      color: aliceblue;
+                      border-radius: 50px;
+                      height: 50px;
+                      width: 50px;
+                      font-size: 25px;
+                    "
+                  >
+                    <i class="bi bi-telephone"></i>
+                  </button>
+                  &nbsp;&nbsp;&nbsp;
+                  <span class="text-muted mt-2">Phone : </span> &nbsp;
+                  <span class="number m-2">{{
+                    EmployeeDetail.phoneNumber
+                  }}</span>
+                </div>
+
+                <div class="col-sm-4 d-flex justify-content-center">
+                  <button
+                    style="
+                      background-color: rgb(79, 79, 79);
+                      color: aliceblue;
+                      border-radius: 50px;
+                      height: 50px;
+                      width: 50px;
+                      font-size: 25px;
+                    "
+                  >
+                    <i class="bi bi-calendar-day"></i>
+                  </button>
+                  &nbsp;&nbsp;&nbsp;
+                  <span class="text-muted mt-2">Date of birth : </span> &nbsp;&nbsp;
+                  <span class="dob mt-2"> 25 Sep 1999</span>
+                </div>
+              </div>
+              <br />
+
+              <div class="row pl-4">
+                <div
+                  style="font-size: 16px; width: 97%"
+                  class="col-12 bg-light p-3"
+                >
+                  <i style="color: rgb(43, 207, 152)" class="bi bi-geo-alt"> </i
+                  >&nbsp;
+                  <span class="text-muted">Address : </span>
+                  <span> House 181,building 12, Ahmedabad</span>
+                  <br />
+                  <br />
+                  <i style="color: rgb(43, 207, 152)" class="bi bi-coin"> </i
+                  >&nbsp;
+                  <span class="text-muted">Daily wages :</span>
+                  <span> 300 N </span>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row" style="margin-left: 18px; margin-bottom: 20px">
+              <div
+                style="font-size: 18px; width: 50%"
+                class="col-6 border-line"
+              >
+                <div
+                  class="col-12 text-white p-3 fs-10"
+                  style="background-color: #949b9f"
+                >
+                  Educational Details & Skill Sets:
+                </div>
+                <div class="bg-light p-3">
+                  <div class="col-12 bg-light">
+                    &nbsp;&nbsp;
+                    <span class="text-muted"
+                      >Most Recent Education Degree:</span
+                    >
+                    &nbsp; mining Engineer
                   </div>
-                  <div style="font-size: 18px" class="col-6">
-                    <div class="col-12 text-white p-3 fs-10" style="background-color:#949B9F">
-                      Skill Sets & Level:
-                    </div>
-                    <div class="col-12 bg-light p-2">
-                      <div class="d-flex mx-2 justify-content-between align-items-center">
-                        <span class="text-muted mr-2">Welder</span><span>{{ EmployeeDetail.welder }}</span>
-                      </div>
-                    </div>
+                  <br />
 
-                    <div class="col-12 bg-light p-2">
-                      <div class="d-flex mx-2 justify-content-between align-items-center">
-                        <span class="text-muted">Fitter</span><span>{{ EmployeeDetail.fitter }}</span>
-                      </div>
-                    </div>
+                  <div class="col-12 text-muted">
+                    <p style="margin-left: 12px">Certificate</p>
+                    &nbsp;&nbsp;
+                    <img width="300" src="assets/images/certificate.webp" />
+                  </div>
+                </div>
+              </div>
 
-                    <div class="col-12 bg-light p-2">
-                      <div class="d-flex mx-2 justify-content-between align-items-center">
-                        <span class="text-muted">Rigger</span><span>{{ EmployeeDetail.rigger }}</span>
-                      </div>
-                    </div>
+              <div
+                style="font-size: 18px; width: 46%; margin-bottom: 20px;"
+                class="col-6"
+              >
+                <div
+                class="col-12 text-white p-3 fs-10"
+                style="background-color: #949b9f; height: 16%;"
+                >
+                  Skill Sets & Level:
+                </div>
+                <div class="col-12 bg-light p-2">
+                  <div
+                    class="d-flex mx-2 justify-content-between align-items-center"
+                  >
+                    <span class="text-muted" style="margin-left: 12px"
+                      >Welder</span
+                    ><span style="margin-right: 12px">{{
+                      EmployeeDetail.welder
+                    }}</span>
+                  </div>
+                </div>
 
-                    <div class="col-12 bg-light p-2">
-                      <div class="d-flex mx-2 justify-content-between align-items-center">
-                        <span class="text-muted">Sacffolder</span><span>{{ EmployeeDetail.sacffolder }}</span>
-                      </div>
-                    </div>
+                <div class="col-12 bg-light p-2">
+                  <div
+                    class="d-flex mx-2 justify-content-between align-items-center"
+                  >
+                    <span class="text-muted" style="margin-left: 12px"
+                      >Fitter</span
+                    ><span style="margin-right: 12px">{{
+                      EmployeeDetail.fitter
+                    }}</span>
+                  </div>
+                </div>
 
-                    <div class="col-12 bg-light p-2">
-                      <div class="d-flex mx-2 justify-content-between align-items-center">
-                        <span class="text-muted">Instrument Tech </span><span>{{ EmployeeDetail.instructionTech
-                          }}</span>
-                      </div>
-                    </div>
+                <div class="col-12 bg-light p-2">
+                  <div
+                    class="d-flex mx-2 justify-content-between align-items-center"
+                  >
+                    <span class="text-muted" style="margin-left: 12px"
+                      >Rigger</span
+                    ><span style="margin-right: 12px">{{
+                      EmployeeDetail.rigger
+                    }}</span>
+                  </div>
+                </div>
 
-                    <div class="col-12 bg-light p-2">
-                      <div class="d-flex mx-2 justify-content-between align-items-center">
-                        <span class="text-muted">Election</span><span>{{ EmployeeDetail.election }}</span>
-                      </div>
-                    </div>
+                <div class="col-12 bg-light p-2">
+                  <div
+                    class="d-flex mx-2 justify-content-between align-items-center"
+                  >
+                    <span class="text-muted" style="margin-left: 12px"
+                      >Sacffolder</span
+                    ><span style="margin-right: 12px">{{
+                      EmployeeDetail.sacffolder
+                    }}</span>
+                  </div>
+                </div>
 
-                    <div class="col-12 bg-light p-2">
-                      <div class="d-flex mx-2 justify-content-between align-items-center">
-                        <span class="text-muted">Mechanic</span><span>{{ EmployeeDetail.mechanic }}</span>
-                      </div>
-                    </div>
+                <div class="col-12 bg-light p-2">
+                  <div
+                    class="d-flex mx-2 justify-content-between align-items-center"
+                  >
+                    <span class="text-muted" style="margin-left: 12px"
+                      >Instrument Tech </span
+                    ><span style="margin-right: 12px">{{
+                      EmployeeDetail.instructionTech
+                    }}</span>
+                  </div>
+                </div>
 
-                    <div class="col-12 bg-light p-2">
-                      <div class="d-flex mx-2 justify-content-between align-items-center">
-                        <span class="text-muted">Crane Operator </span><span>{{ EmployeeDetail.craneOperator }}</span>
-                      </div>
-                    </div>
+                <div class="col-12 bg-light p-2">
+                  <div
+                    class="d-flex mx-2 justify-content-between align-items-center"
+                  >
+                    <span class="text-muted" style="margin-left: 12px"
+                      >Election</span
+                    ><span style="margin-right: 12px">{{
+                      EmployeeDetail.election
+                    }}</span>
+                  </div>
+                </div>
+
+                <div class="col-12 bg-light p-2">
+                  <div
+                    class="d-flex mx-2 justify-content-between align-items-center"
+                  >
+                    <span class="text-muted" style="margin-left: 12px"
+                      >Mechanic</span
+                    ><span style="margin-right: 12px">{{
+                      EmployeeDetail.mechanic
+                    }}</span>
+                  </div>
+                </div>
+
+                <div class="col-12 bg-light p-2" style="height: 50px">
+                  <div
+                    class="d-flex mx-2 justify-content-between align-items-center"
+                  >
+                    <span class="text-muted" style="margin-left: 12px"
+                      >Crane Operator </span
+                    ><span style="margin-right: 12px">{{
+                      EmployeeDetail.craneOperator
+                    }}</span>
+                  </div>
+                </div>
+
+                <div class="col-12 bg-light p-2" style="height: 25px">
+                  <div
+                    class="d-flex mx-2 justify-content-between align-items-center"
+                  >
                   </div>
                 </div>
               </div>
@@ -170,3 +264,5 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
