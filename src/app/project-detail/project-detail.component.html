@@ -1,56 +1,32 @@
 <nav class="navbar navbar-expand m-3">
   <div class="container">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <!-- on-going -->
         <li class="nav-item">
-          <span
-            style="font-size: 18px; margin-right: 45px;color: rgb(43, 207, 152);"
-            [ngClass]="{ activeColor: ProjectDetail.status == 0 }"
-            class="nav-link"
-            aria-current="page"
-            >On-Going</span
-          >
+          <span style="font-size: 19px; margin-right: 50px;color: rgb(43, 207, 152);"
+            [ngClass]="{ activeColor: ProjectDetail.status == 0 }" class="nav-link" aria-current="page">On-Going</span>
         </li>
 
         <!-- past -->
         <li class="nav-item">
-          <span
-            style="font-size: 18px; margin-right: 45px;  color: rgb(84, 84, 84);"
-            [ngClass]="{ activeColor: ProjectDetail.status == 1 }"
-            class="nav-link"
-            >Past</span
-          >
+          <span style="font-size: 19px; margin-right: 50px;  color: rgb(84, 84, 84);"
+            [ngClass]="{ activeColor: ProjectDetail.status == 1 }" class="nav-link">Past</span>
         </li>
 
         <!-- upcoming -->
         <li class="nav-item">
-          <span
-            style="font-size: 18px; color: rgb(84, 84, 84);"
-            class="nav-link"
-            [ngClass]="{ activeColor: ProjectDetail.status == 2 }"
-            >Upcoming</span
-          >
+          <span style="font-size: 19px; color: rgb(84, 84, 84);" class="nav-link"
+            [ngClass]="{ activeColor: ProjectDetail.status == 2 }">Upcoming</span>
         </li>
       </ul>
-      <a
-        style="background-color: rgb(236, 253, 248); color: rgb(43, 207, 152)"
-        class="btn btn-outline-success"
-        href="create-project"
-        role="button"
-        >Create New Project</a
-      >
+      <a style="background-color: rgb(236, 253, 248); color: rgb(43, 207, 152)" class="btn btn-outline-success"
+        href="create-project" role="button">Create New Project</a>
     </div>
   </div>
 </nav>
@@ -60,27 +36,22 @@
   <div class="card">
     <div class="card-body" *ngIf="ProjectDetail">
       <h5 class="card-title">{{ ProjectDetail.projectTitle }}</h5>
-      <span>Supervisor: </span
-      ><span class="text-muted"
-        >{{ ProjectDetail.selectSupervisor.firstName }}
-        {{ ProjectDetail.selectSupervisor.lastName }}</span
-      >
+      <span>Supervisor: </span><span class="text-muted m-2">{{ ProjectDetail.selectSupervisor.firstName }}
+        {{ ProjectDetail.selectSupervisor.lastName }}</span>
       <p>{{ ProjectDetail.projectLocation }}</p>
-      <div class="row align-items-center">
+
+      <div class="row align-items-center" style="background-color: rgb(252, 250, 250);height:50px;">
         <div class="col">
-          <span>Project Period: </span
-          ><span class="text-muted">
+          <span>Project Period: </span><span class="text-muted m-2">
             {{ ProjectDetail.startDate | date: "dd/MM/yyyy" }} -
             {{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}
           </span>
         </div>
         <div class="col">
-          <span>Number of People Added:</span
-          ><span class="text-muted">{{ ProjectDetail.expectedMember }}</span>
+          <span>Number of People Added:</span><span class="text-muted m-2">{{ ProjectDetail.expectedMember }}</span>
         </div>
         <div class="col">
-          <span>Amount in Escrow Account: </span
-          ><span class="text-muted">#30000</span>
+          <span>Amount in Escrow Account: </span><span class="text-muted m-2">#30000</span>
         </div>
       </div>
       <br />
@@ -88,29 +59,20 @@
       <div class="row align-items-center">
         <div class="col">
           <!-- not for implementation -->
-          <button
-            style="
+          <button style="
               color: rgb(39, 190, 140);
-              background-color: rgb(243, 243, 243);
-            "
-            type="button"
-            class="btn btn-light disabled"
-          >
+              background-color: rgb(234, 232, 232);width: 270px;
+            " type="button" class="btn btn-light disabled">
             Top Up Account
           </button>
         </div>
 
         <!-- for add the team member -->
         <div class="col">
-          <button
-            style="
+          <button style="
               color: rgb(39, 190, 140);
-              background-color: rgb(243, 243, 243);
-            "
-            class="btn btn-light"
-            routerLink="/add-member/{{ ProjectDetail._id }}"
-            role="button"
-          >
+              background-color: rgb(243, 243, 243); width: 270px;
+            " class="btn btn-light" routerLink="/add-member/{{ ProjectDetail._id }}" role="button">
             Add Member
           </button>
         </div>
@@ -119,53 +81,35 @@
         <div class="col">
           <ng-template #content let-modal>
             <div class="d-flex justify-content-end m-3">
-              <button
-                type="button"
-                class="btn btn-close"
-                aria-label="Close"
-                (click)="modal.close('Close')"
-              ></button>
+              <button type="button" class="btn btn-close" aria-label="Close" (click)="modal.close('Close')"></button>
             </div>
             <div class="modal-body text-center">
               <p>Are you sure you want to close this project?</p>
               <p>you might be changed with a penalty fee</p>
-              <button
-                style="
+              <button style="
                   border-radius: 50px;
                   background-image: linear-gradient(to left, #21ce99, #1af5b2);
-                "
-                type="button"
-                class="btn btn-success my-3 border-0"
-                (click)="modal.close('Save')"
-              >
+                " type="button" class="btn btn-success my-3 border-0" (click)="modal.close('Save')">
                 Confirm & Proceed
               </button>
             </div>
             <!-- <div class="modal-footer justify-content-center"> -->
             <!-- </div> -->
           </ng-template>
-          <button
-            style="
+          <button style="
               color: rgb(39, 190, 140);
-              background-color: rgb(243, 243, 243);
-            "
-            class="btn btn-light"
-            (click)="open(content)"
-          >
+              background-color: rgb(243, 243, 243);width: 270px;
+            " class="btn btn-light" (click)="open(content)">
             Close Project
           </button>
         </div>
 
         <div class="col">
           <!-- not for implementation -->
-          <button
-            style="
+          <button style="
               color: rgb(39, 190, 140);
-              background-color: rgb(243, 243, 243);
-            "
-            type="button"
-            class="btn btn-light disabled"
-          >
+              background-color: rgb(243, 243, 243);width: 270px;
+            " type="button" class="btn btn-light disabled">
             Edit Project
           </button>
         </div>
@@ -175,30 +119,26 @@
 </div>
 <br />
 <!-- table details  -->
-<div class="container">
+<div class="container" style="height: 52vh;">
   <table class="table table-bordered bg-white">
-    <thead class="table-light">
+    <thead class="table" style="color: rgb(43, 43, 43);">
       <tr>
-        <th scope="col">Member Name</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Email Address</th>
-        <th scope="col">Daily Wages</th>
-        <th scope="col">Contact Start Date</th>
-        <th scope="col">Contact End Date</th>
+        <th scope="col" class="text-center">Member Name</th>
+        <th scope="col" class="text-center">Phone Number</th>
+        <th scope="col" class="text-center">Email Address</th>
+        <th scope="col" class="text-center">Daily Wages</th>
+        <th scope="col" class="text-center">Contact Start Date</th>
+        <th scope="col" class="text-center">Contact End Date</th>
       </tr>
     </thead>
-    <tbody>
-      <tr
-        *ngFor="let employee of ProjectDetail.addUser"
-        (click)="onClick(ProjectDetail._id)"
-        style="cursor: pointer"
-      >
-        <td>{{ employee.firstName }} {{ employee.lastName }}</td>
-        <td>{{ employee.phoneNumber }}</td>
-        <td>{{ employee.email }}</td>
-        <td>300 N</td>
-        <td>{{ ProjectDetail.startDate | date: "dd/MM/yyyy" }}</td>
-        <td>{{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}</td>
+    <tbody class="empdetail text-muted table-light">
+      <tr *ngFor="let employee of ProjectDetail.addUser" (click)="onClick(ProjectDetail._id)" style="cursor: pointer">
+        <td class="text-center">{{ employee.firstName }} {{ employee.lastName }}</td>
+        <td class="text-center">{{ employee.phoneNumber }}</td>
+        <td class="text-center">{{ employee.email }}</td>
+        <td class="text-center">300 N</td>
+        <td class="text-center">{{ ProjectDetail.startDate | date: "dd/MM/yyyy" }}</td>
+        <td class="text-center">{{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}</td>
       </tr>
     </tbody>
   </table>
