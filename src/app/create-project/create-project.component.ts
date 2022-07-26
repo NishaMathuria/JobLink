@@ -47,6 +47,14 @@ export class CreateProjectComponent implements OnInit {
   }
 
   onSubmit() {
+    let startD = new Date(this.createForm.value.startDate);
+    let endD = new Date(this.createForm.value.endDate);
+
+    if(endD<startD){
+      alert('end date should be greater than startdate');
+      return;
+    }
+    
     this.projectService
       .createProject(this.createForm.value)
       .subscribe((data: any) => {

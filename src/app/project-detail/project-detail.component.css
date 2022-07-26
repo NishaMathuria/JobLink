@@ -21,3 +21,6 @@ table.table th{
     border-left: 1px solid rgb(230, 230, 230);
     border-right: 1px solid rgb(230, 230, 230);
 }
+.activeColor{
+    color: rgb(43, 207, 152);
+}

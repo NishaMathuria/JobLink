@@ -16,12 +16,7 @@
         <!-- on-going -->
         <li class="nav-item" (click)="onClickItem(0)">
           <span
-            style="
-              font-size: 19px;
-              margin-right: 50px;
-              cursor: pointer;
-              color: rgb(43, 207, 152);
-            "
+            style="font-size: 19px; margin-right: 50px; cursor: pointer"
             [ngClass]="{ activeColor: statusColor == 0 }"
             class="nav-link"
             aria-current="page"
@@ -33,12 +28,7 @@
         <!-- past -->
         <li class="nav-item" (click)="onClickItem(1)">
           <span
-            style="
-              font-size: 19px;
-              margin-right: 50px;
-              cursor: pointer;
-              color: rgb(84, 84, 84);
-            "
+            style="font-size: 19px; margin-right: 50px; cursor: pointer"
             [ngClass]="{ activeColor: statusColor == 1 }"
             class="nav-link"
             >Past</span
@@ -48,7 +38,7 @@
         <!-- upcoming -->
         <li class="nav-item" (click)="onClickItem(2)">
           <span
-            style="font-size: 19px; cursor: pointer; color: rgb(84, 84, 84)"
+            style="font-size: 19px; cursor: pointer"
             class="nav-link"
             [ngClass]="{ activeColor: statusColor == 2 }"
             >Upcoming</span
@@ -81,21 +71,22 @@
     >
       <h5 class="card-title">{{ project.projectTitle }}</h5>
       <div class="row">
-        <div class="col-6">
+        <div class="col-6 mt-2">
           <span>Supervisor: </span> &nbsp;
           <span class="text-muted">
             {{ project.selectSupervisor.firstName }}
             {{ project.selectSupervisor.lastName }}
           </span>
-          <p>{{ project.projectLocation }}</p>
+          <p class="mt-2">{{ project.projectLocation }}</p>
         </div>
-        <div class="col-6">
-          <span>Project Period: </span> &nbsp;
+        <div class="col-6 bg-light" style="width: 45%">
+          <span> Project Period: </span> &nbsp;
           <span class="text-muted">
             {{ project.startDate | date: "dd/MM/yyyy" }} -
             {{ project.endDate | date: "dd/MM/yyyy" }}
           </span>
           <br />
+          <br style="margin-top: 20% !important" />
           <span>Number Of People Added: </span> &nbsp;
           <span class="text-muted">{{ project.expectedMember }}</span>
         </div>

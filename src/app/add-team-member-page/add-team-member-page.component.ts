@@ -59,7 +59,7 @@ export class AddTeamMemberPageComponent implements OnInit {
         // console.log(response);
         this.myService.employee.next(response);
         this.createForm.reset();
-        this.router.navigate(['/employeeinfo']);
+        this.router.navigate(['project-detail/' + this.projectId]);
       });
   }
 

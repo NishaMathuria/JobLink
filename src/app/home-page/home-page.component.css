@@ -1,3 +1,6 @@
 .pagination .current{
     background-color: chartreuse;
 }
+.activeColor{
+    color: rgb(43, 207, 152);
+}

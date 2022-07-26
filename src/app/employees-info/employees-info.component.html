@@ -1,83 +1,28 @@
-<nav class="navbar navbar-expand bg-light">
-  <div style="background-color: rgb(249, 249, 254)" class="container">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <!-- on-going -->
-        <li class="nav-item">
-          <a
-            style="color: rgb(43, 207, 152)"
-            class="nav-link active"
-            aria-current="page"
-            href="#"
-            >On-Going</a
+<div class="container" style="height: 90vh">
+  <div class="container p-3">
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">First Name</th>
+            <th scope="col" class="text-center">Last Name</th>
+            <th scope="col" class="text-center">Phone Number</th>
+            <th scope="col" class="text-center">Email Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let employee of employees"
+            (click)="onClick(employee._id)"
+            style="cursor: pointer"
           >
-        </li>
-
-        <!-- past -->
-        <li class="nav-item">
-          <a style="color: rgb(115, 115, 115)" class="nav-link" href="#"
-            >Past</a
-          >
-        </li>
-
-        <!-- upcoming -->
-        <li class="nav-item">
-          <a style="color: rgb(115, 115, 115)" class="nav-link" href="#"
-            >Upcoming</a
-          >
-        </li>
-      </ul>
-      <a
-        style="background-color: rgb(236, 253, 248); color: rgb(43, 207, 152)"
-        class="btn btn-outline-success"
-        href="create-project"
-        role="button"
-        >Create New Project</a
-      >
-    </div>
-  </div>
-</nav>
-
-<div class="container">
-  <div style="background-color: rgb(249, 249, 254)" class="card">
-    <div class="card-header">
-      <div class="container p-3">
-        <div class="card">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">Email Address</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                *ngFor="let employee of employees"
-                (click)="onClick(employee._id)"
-                style="cursor: pointer"
-              >
-                <td>{{ employee.firstName }}</td>
-                <td>{{ employee.lastName }}</td>
-                <td>{{ employee.phoneNumber }}</td>
-                <td>{{ employee.email }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+            <td class="text-center">{{ employee.firstName }}</td>
+            <td class="text-center">{{ employee.lastName }}</td>
+            <td class="text-center">{{ employee.phoneNumber }}</td>
+            <td class="text-center">{{ employee.email }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

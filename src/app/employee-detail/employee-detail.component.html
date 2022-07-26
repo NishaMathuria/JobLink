@@ -59,17 +59,17 @@
   </div>
 </nav>
 
-<div class="container" style="height: 93vh; margin-bottom: 70px">
+<div class="container" style="height: 93vh; margin-bottom: 95px">
   <div class="card-body">
     <div class="card">
       <div class="card-body" *ngIf="ProjectDetail">
-        <h5 class="card-title">{{ ProjectDetail.projectTitle }}</h5>
-        <span>Supervisor: </span>&nbsp;
+        <h5 class="card-title" style="margin-left: 10px;">{{ ProjectDetail.projectTitle }}</h5>
+        <span style="margin-left: 10px;">Supervisor: </span>&nbsp;
         <span class="text-muted"
           >{{ ProjectDetail.selectSupervisor.firstName }}
           {{ ProjectDetail.selectSupervisor.lastName }}</span
         >
-        <p>{{ ProjectDetail.projectLocation }}</p>
+        <p style="margin-left: 10px;margin-top: 10px;">{{ ProjectDetail.projectLocation }}</p>
 
         <div
           class="row align-items-center"
@@ -269,7 +269,7 @@
       <!-- </div> -->
     </div>
   </div>
-  <div class="container mb-5">
+  <div class="container mb-3">
     <nav class="navbar" style="background-color: #ffffff">
       <div class="container-fluid">
         <p class="navbar-brand">Week 3</p>

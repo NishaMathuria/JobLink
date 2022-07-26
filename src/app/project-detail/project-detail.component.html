@@ -19,7 +19,6 @@
             style="
               font-size: 19px;
               margin-right: 50px;
-              color: rgb(43, 207, 152);
             "
             [ngClass]="{ activeColor: ProjectDetail.status == 0 }"
             class="nav-link"
@@ -31,7 +30,7 @@
         <!-- past -->
         <li class="nav-item">
           <span
-            style="font-size: 19px; margin-right: 50px; color: rgb(84, 84, 84)"
+            style="font-size: 19px; margin-right: 50px;"
             [ngClass]="{ activeColor: ProjectDetail.status == 1 }"
             class="nav-link"
             >Past</span
@@ -41,7 +40,7 @@
         <!-- upcoming -->
         <li class="nav-item">
           <span
-            style="font-size: 19px; color: rgb(84, 84, 84)"
+            style="font-size: 19px;"
             class="nav-link"
             [ngClass]="{ activeColor: ProjectDetail.status == 2 }"
             >Upcoming</span
@@ -63,32 +62,32 @@
 <div class="container mt-3">
   <div class="card">
     <div class="card-body" *ngIf="ProjectDetail">
-      <h5 class="card-title">{{ ProjectDetail.projectTitle }}</h5>
-      <span>Supervisor: </span
+      <h5 class="card-title" style="margin-left: 7px;">{{ ProjectDetail.projectTitle }}</h5>
+      <span style="margin-left: 7px;">Supervisor: </span
       ><span class="text-muted m-2"
         >{{ ProjectDetail.selectSupervisor.firstName }}
         {{ ProjectDetail.selectSupervisor.lastName }}</span
       >
-      <p>{{ ProjectDetail.projectLocation }}</p>
+      <p style="margin-left: 7px;margin-top: 10px;">{{ ProjectDetail.projectLocation }}</p>
 
       <div
         class="row align-items-center"
-        style="background-color: rgb(252, 250, 250); height: 50px"
+        style="background-color: rgb(252, 250, 250); height: 50px;width: 98%;margin-left: 2px;"
       >
-        <div class="col">
+        <div class="col text-center">
           <span>Project Period: </span
           ><span class="text-muted m-2">
             {{ ProjectDetail.startDate | date: "dd/MM/yyyy" }} -
             {{ ProjectDetail.endDate | date: "dd/MM/yyyy" }}
           </span>
         </div>
-        <div class="col">
+        <div class="col text-center">
           <span>Number of People Added:</span
           ><span class="text-muted m-2">{{
             ProjectDetail.expectedMember
           }}</span>
         </div>
-        <div class="col">
+        <div class="col text-center">
           <span>Amount in Escrow Account: </span
           ><span class="text-muted m-2">#30000</span>
         </div>
@@ -151,8 +150,6 @@
                 Confirm & Proceed
               </button>
             </div>
-            <!-- <div class="modal-footer justify-content-center"> -->
-            <!-- </div> -->
           </ng-template>
           <button
             style="
